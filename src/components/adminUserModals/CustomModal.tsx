@@ -5,7 +5,7 @@ import {
   DialogTitle,
 } from "@mui/material";
 import { MenuItem } from "../../commonStyle/CommonStyle";
-import { ApplyButton } from "../../commonStyle/CommonStyle";
+import { BlueButton } from "../../commonStyle/CommonStyle";
 
 
 export default function CustomModal(props: any) {
@@ -34,9 +34,9 @@ export default function CustomModal(props: any) {
         </DialogTitle>
         {children}
         <DialogActions>
-          <ApplyButton onClick={handleClose} autoFocus>
+          <BlueButton onClick={handleClose} autoFocus>
             Apply
-          </ApplyButton>
+          </BlueButton>
         </DialogActions>
       </Dialog>
     </React.Fragment>
