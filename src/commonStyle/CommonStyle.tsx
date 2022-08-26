@@ -9,7 +9,10 @@ import {
   Box,
   Typography,
   Button,
-  MenuItem as MuiMenuItem
+  MenuItem as MuiMenuItem,
+  TableCell,
+  TableRow,
+  TableHead,
 } from "@mui/material";
 
 export const ApplyButton = styled(Button)(() => ({
@@ -103,7 +106,7 @@ export const CustomModal = (props: any) => {
 
   return (
     <Box
-    style={{minWidth:'300px'}}>
+      style={{ minWidth: '300px' }}>
       <MenuItem onClick={handleClickOpen}>
         {name}
       </MenuItem>
@@ -131,3 +134,21 @@ export const MuiChip = styled(Chip)(({ theme }) => ({
   },
   color: "blue",
 }));
+
+export const CustomTableHeadWithTwoActions = (props: any) => {
+  const header = props.name;
+  return (
+    <TableHead>
+      <TableRow
+        className="user-admin-console-tablerow">
+        {
+          header.map((item: string) => {
+            return <TableCell align="left">{item}</TableCell>
+          })
+        }
+        <TableCell></TableCell>
+        <TableCell></TableCell>
+      </TableRow>
+    </TableHead>
+  )
+}

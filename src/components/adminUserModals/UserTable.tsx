@@ -11,9 +11,9 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 
 import AdminUserTableBody from "./AdminUserTableBody";
-import AdminUserTableHead from "./AdminUserTableHead";
 import AdminUserPagination from "./AdminUserPagination";
 import PopOverModal from "./PopOverModal";
+import { CustomTableHeadWithTwoActions } from "../../commonStyle/CommonStyle";
 
 
 //Reac API data here
@@ -100,7 +100,7 @@ export default function UserTable() {
       <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} deletedUserClick={deletedUserClick} />
       <TableContainer component={Paper}>
         <Table>
-          <AdminUserTableHead name={tableHeader} />
+          <CustomTableHeadWithTwoActions name={tableHeader} />
           <AdminUserTableBody rows={rows} />
           <TableFooter>
             <AdminUserPagination rows={rows} />
