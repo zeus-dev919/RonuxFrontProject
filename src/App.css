@@ -1,0 +1,158 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.MuiDialog-paper {
+  width: 100% !important;
+}
+
+.active-hover button {
+  visibility: hidden;
+}
+
+.active-hover .name-detail {
+  visibility: visible;
+}
+
+.active-hover:hover button {
+  visibility: visible;
+}
+
+.normal-text {
+  text-transform: none !important;
+}
+
+.round-button {
+  margin-top: -10px;
+  border-radius: 30px !important;
+  margin-bottom: 5px !important;
+  padding: 8px 15px !important;
+}
+
+.round-button:hover {
+  background-color: lightblue !important;
+}
+
+.row-hover .MuiChip-root {
+  visibility: hidden;
+}
+
+.row-hover:hover .MuiChip-root {
+  visibility: visible;
+}
+
+.span-gray {
+  color: gray;
+}
+
+.gray-header {
+  background-color: lightgray !important;
+}
+
+.blue {
+  color: #61dafb;
+}
+
+.list-active {
+  color: blue;
+}
+
+.dialog-title {
+  background-color: #336def;
+  font-size: 25px !important;
+  color: white;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* user-admin-console css */
+.user-admin-console-toolbar,
+.user-admin-console-tablerow {
+  background-color: #cccccc;
+  height: fit-content;
+}
+
+.user-admin-console-typography {
+  color: #757575;
+}
+
+.user-admin-console-add-filters {
+  border-color: #cccccc;
+  padding: 3px 10px;
+  border-width: 1px;
+  border-style: dashed;
+  border-radius: 16px 16px 16px 16px;
+  color: #757575;
+  font-size: 14px;
+  align-items: center;
+  margin-left: 16px;
+  display: flex;
+  width: fit-content;
+}
+
+.user-admin-console-add-filters:hover {
+  cursor: pointer;
+}
+
+.user-admin-console-clear-filters {
+  color: #757575;
+  padding: 6px 6px 6px 6px;
+}
+
+.user-admin-console-clear-filters:hover {
+  border-radius: 16px 16px 16px 16px;
+  border-color: #cccccc;
+  background-color: #cccccc;
+}
+.user-admin-console-icon {
+  display: flex;
+  width: fit-content;
+}
+
+.admin-user-console-choose {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-admin-console-container {
+  border: 1px #cccccc solid;
+}
+.blocked-toolbar {
+  background-color: #cccccc;
+  height: fit-content;
+  justify-content: space-between;
+}
