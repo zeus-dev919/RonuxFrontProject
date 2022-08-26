@@ -15,15 +15,6 @@ import {
   TableHead,
 } from "@mui/material";
 
-export const ApplyButton = styled(Button)(() => ({
-  "&:hover": {
-    background: "#336def",
-  },
-  background: "#336def",
-  color: "white",
-  borderRadius: "20px",
-}));
-
 export const DecideButton = styled(Button)(() => ({
   color: "#336def",
   textTransform: "none",
@@ -148,6 +139,37 @@ export const CustomTableHeadWithTwoActions = (props: any) => {
         }
         <TableCell></TableCell>
         <TableCell></TableCell>
+      </TableRow>
+    </TableHead>
+  )
+}
+export const CustomTableHeadWithOneActions = (props: any) => {
+  const header = props.name;
+  return (
+    <TableHead>
+      <TableRow
+        className="user-admin-console-tablerow">
+        {
+          header.map((item: string) => {
+            return <TableCell align="left">{item}</TableCell>
+          })
+        }
+        <TableCell></TableCell>
+      </TableRow>
+    </TableHead>
+  )
+}
+export const CustomTableHeadWithNoActions = (props: any) => {
+  const header = props.name;
+  return (
+    <TableHead>
+      <TableRow
+        className="user-admin-console-tablerow">
+        {
+          header.map((item: string) => {
+            return <TableCell align="left">{item}</TableCell>
+          })
+        }
       </TableRow>
     </TableHead>
   )
