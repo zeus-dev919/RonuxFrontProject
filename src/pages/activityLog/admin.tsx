@@ -16,7 +16,7 @@ import { TableBox } from "../../commonStyle/CommonStyle";
 
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
 import PopOverModal from "../../components/activity/admin/PopOverModal";
-import AdminActivityTableHead from "../../components/activity/admin/AdminActivityTableHead";
+import { CustomTableHeadWithNoActions } from "../../commonStyle/CommonStyle";
 import AdminActivityTableBody from "../../components/activity/admin/AdminActivityTableBody";
 //Reac API data here
 const data = [{
@@ -75,7 +75,7 @@ export default function AdminActivityLog() {
           <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} />
           <TableContainer component={Paper}>
             <Table>
-              <AdminActivityTableHead name={tableHeader} />
+              <CustomTableHeadWithNoActions name={tableHeader} />
               <AdminActivityTableBody rows={rows} />
               <TableFooter>
                 <AdminUserPagination rows={rows} />

@@ -15,7 +15,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { DecideButton } from "../../commonStyle/CommonStyle";
 
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
-import BlockedKeywordTableHead from "../../components/blocked/keyword/BlockedKeywordTableHead";
+import { CustomTableHeadWithOneActions } from "../../commonStyle/CommonStyle";
 import PopOverModal from "../../components/blocked/keyword/PopOverModal";
 import AddBlockedKeywordModal from "../../components/blocked/keyword/AddBlockedKeywordModal";
 import BlockedKeywordTableBody from "../../components/blocked/keyword/BlockedKeywordTableBody";
@@ -106,7 +106,7 @@ export default function BlockedIP() {
           <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} unblockIPClick={unblockIPClick} />
           <TableContainer component={Paper}>
             <Table>
-              <BlockedKeywordTableHead name={tableHeader} />
+              <CustomTableHeadWithOneActions name={tableHeader} />
               <BlockedKeywordTableBody rows={rows} />
               <TableFooter>
                 <AdminUserPagination rows={rows} />

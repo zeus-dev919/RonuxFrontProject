@@ -16,7 +16,7 @@ import { DecideButton } from "../../commonStyle/CommonStyle";
 
 import BlockedIPTableBody from "../../components/blocked/ip/BlockedIPTableBody";
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
-import BlockedIPTableHead from "../../components/blocked/ip/BlockedIPTableHead";
+import { CustomTableHeadWithOneActions } from "../../commonStyle/CommonStyle";
 import AddBlockedIPModal from "../../components/blocked/ip/AddBlockedIPModal";
 import PopOverModal from "../../components/blocked/ip/PopOverModal";
 
@@ -100,7 +100,7 @@ export default function BlockedIP() {
           <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} unblockIPClick={unblockIPClick} />
           <TableContainer component={Paper}>
             <Table>
-              <BlockedIPTableHead name={tableHeader} />
+              <CustomTableHeadWithOneActions name={tableHeader} />
               <BlockedIPTableBody rows={rows} />
               <TableFooter>
                 <AdminUserPagination rows={rows} />
