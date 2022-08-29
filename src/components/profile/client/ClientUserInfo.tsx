@@ -5,8 +5,8 @@ export default function ClientUserInfo() {
   return (
     <Paper style={{ marginBottom: '20px', border: '1px solid #cccccc' }}>
       <Box margin='20px'>
-        <Typography style={{fontSize:'20px', marginBottom:'20px'}}>
-          Basic Information
+        <Typography style={{ fontSize: '20px', marginBottom: '20px' }}>
+          User Information
         </Typography>
         <Box sx={{ display: 'flex' }}>
           <Typography marginBottom='10px'>
@@ -19,7 +19,7 @@ export default function ClientUserInfo() {
             Paused (Pause 2020-03-06)
           </Typography>
         </Box>
-        <Box  sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }}>
           <Typography marginBottom='10px' >
             User type:
           </Typography>
@@ -27,7 +27,7 @@ export default function ClientUserInfo() {
             Client
           </Typography>
         </Box>
-        <Box  sx={{ display: 'flex'  }}>
+        <Box sx={{ display: 'flex' }}>
           <Typography marginBottom='10px'>
             User email:
           </Typography>
@@ -35,7 +35,7 @@ export default function ClientUserInfo() {
             alexlance@gmail.com
           </Typography>
         </Box>
-        <Box  sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }}>
           <Typography >
             Last sign in:
           </Typography>

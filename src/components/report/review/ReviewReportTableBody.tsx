@@ -8,18 +8,21 @@ import {
   Avatar,
   Button
 } from "@mui/material";
-import { MuiChip } from "../../commonStyle/CommonStyle";
+import { MuiChip } from "../../../commonStyle/CommonStyle";
 
-export type reviewIDDataType = {
+
+
+export type reviewReportDataType = {
   name: string,
-  status: string,
+  quantity: string,
+  content: string,
   admin: string,
-  applicationTime: string,
-  reviewTime: string
+  status: string,
+  time: string
 }
 
-export default function ReviewIDTableBody(props: any) {
-  const rows: Array<reviewIDDataType> = props.rows;
+export default function ReviewReportTableBody(props: any) {
+  const rows: Array<reviewReportDataType> = props.rows;
   return (
     <TableBody>
       {rows.map((row, index) => (
@@ -35,13 +38,20 @@ export default function ReviewIDTableBody(props: any) {
               </Button>
             </Stack>
           </TableCell>
-          <TableCell style={{ width: '17%' }}>{row.status}</TableCell>
+          <TableCell style={{ width: '17%' }}>{row.quantity}</TableCell>
+          <TableCell style={{ width: '17%' }}>{row.content}</TableCell>
           <TableCell style={{ width: '17%' }}>{row.admin}</TableCell>
-          <TableCell style={{ width: '17%' }}>{row.applicationTime}</TableCell>
-          <TableCell style={{ width: '17%' }}>{row.reviewTime}</TableCell>
+          <TableCell style={{ width: '17%' }}>{row.status}</TableCell>
+          <TableCell style={{ width: '17%' }}>{row.time}</TableCell>
+
           <TableCell align="right">
             <Box className="hidden">
-              <MuiChip label="View identity verification" />
+              <MuiChip label="View review result" />
+            </Box>
+          </TableCell>
+          <TableCell align="right">
+            <Box className="hidden">
+              <MuiChip label="View report content" />
             </Box>
           </TableCell>
         </TableRow>

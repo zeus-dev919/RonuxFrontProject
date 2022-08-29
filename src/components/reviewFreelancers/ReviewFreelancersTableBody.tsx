@@ -12,19 +12,20 @@ import { MuiChip } from "../../commonStyle/CommonStyle";
 
 export type reviewIDDataType = {
   name: string,
-  status: string,
+  reviewStatus: string,
+  approvalStatus: string,
   admin: string,
   applicationTime: string,
   reviewTime: string
 }
 
-export default function ReviewIDTableBody(props: any) {
+export default function ReviewFreelancersTableBody(props: any) {
   const rows: Array<reviewIDDataType> = props.rows;
   return (
     <TableBody>
       {rows.map((row, index) => (
         <TableRow key={index} hover={true} className="row-hover">
-          <TableCell style={{ width: '17%' }} component="th" scope="row">
+          <TableCell style={{ width: '15%' }} component="th" scope="row">
             <Stack direction="row" spacing={0}>
               <Avatar />
               <Button
@@ -35,13 +36,19 @@ export default function ReviewIDTableBody(props: any) {
               </Button>
             </Stack>
           </TableCell>
-          <TableCell style={{ width: '17%' }}>{row.status}</TableCell>
-          <TableCell style={{ width: '17%' }}>{row.admin}</TableCell>
-          <TableCell style={{ width: '17%' }}>{row.applicationTime}</TableCell>
-          <TableCell style={{ width: '17%' }}>{row.reviewTime}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.reviewStatus}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.approvalStatus}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.admin}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.applicationTime}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.reviewTime}</TableCell>
           <TableCell align="right">
             <Box className="hidden">
-              <MuiChip label="View identity verification" />
+              <MuiChip label="Approve" />
+            </Box>
+          </TableCell>
+          <TableCell align="right">
+            <Box className="hidden">
+              <MuiChip label="Reject Approve" />
             </Box>
           </TableCell>
         </TableRow>

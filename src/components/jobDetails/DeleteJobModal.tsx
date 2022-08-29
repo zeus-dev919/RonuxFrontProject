@@ -10,11 +10,17 @@ import {
   Box,
   TextField
 } from "@mui/material";
-import { DecideButton } from "../../../commonStyle/CommonStyle";
-import { MuiChip } from "../../../commonStyle/CommonStyle";
+import { DecideButton } from "../../commonStyle/CommonStyle";
+
+const MuiChip = styled(Chip)(({ theme }) => ({
+  "&:hover": {
+    background: "#ccccff",
+  },
+  color: "blue",
+}));
 
 
-export default function RestoreModal(props: any) {
+export default function DeleteJobModal(props: any) {
   const [open, setOpen] = React.useState(false);
 
   //handle functions
@@ -32,7 +38,7 @@ export default function RestoreModal(props: any) {
   return (
     <Box>
       <Box onClick={handleClickOpen}>
-        <MuiChip label="Unblock" />
+        <MuiChip label="Delete job" />
       </Box>
       <Dialog
         open={open}
@@ -41,11 +47,11 @@ export default function RestoreModal(props: any) {
         <DialogTitle
           style={{ color: "white", backgroundColor: "#336def" }}
         >
-          Delete user {props.name}
+          Delete job
         </DialogTitle>
         <DialogContent style={{ marginTop: "20px" }}>
           <DialogContentText style={{ marginTop: "20px" }} >
-            Sure you want to unblock the keyword {props.keyword}?
+            Sure you want to delete this job?
           </DialogContentText>
           <DialogContentText style={{ marginTop: "20px" }} >
             <TextField label="Unblock Reason" defaultValue="Operation error" sx={{ m: 1, width: '60ch' }}></TextField>
@@ -56,7 +62,7 @@ export default function RestoreModal(props: any) {
             Cancel
           </DecideButton>
           <DecideButton onClick={unblockClick} autoFocus>
-            Unblock
+            Delete
           </DecideButton>
         </DialogActions>
       </Dialog>

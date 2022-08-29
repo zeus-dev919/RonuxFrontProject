@@ -58,7 +58,7 @@ const data = [
     details: "Manage occuptation and skills",
     url: "/skills",
   },
-  
+
   {
     title: "Suggested skill",
     details: "Manage user and suggested skills",
@@ -72,7 +72,7 @@ const data = [
   {
     title: "Review freelancer",
     details: "Review freelancer profile",
-    url: "/admins",
+    url: "/freelancers",
   },
   { title: "Review job", details: "Review client jobs", url: "/admins" },
   { title: "Review report", details: "Review user reports", url: "/admins" },

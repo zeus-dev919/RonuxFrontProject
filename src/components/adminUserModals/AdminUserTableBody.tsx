@@ -62,7 +62,7 @@ export default function AdminUserTableBody(props: any) {
                 className="name-detail normal-text"
                 variant="text"
               >
-                Perry Lance
+                {row.name}
               </Button>
             </Stack>
           </TableCell>

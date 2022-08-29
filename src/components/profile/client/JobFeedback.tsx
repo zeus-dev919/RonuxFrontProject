@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import { Box, Divider, Paper, Typography, Rating } from '@mui/material';
+import { Box, Divider, Paper, Typography, Rating, Avatar, styled } from '@mui/material';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { SeeMoreBox } from '../../../commonStyle/CommonStyle';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
@@ -17,6 +16,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'light' ? '#fbbc05' : '#308fe8',
   },
 }));
+
 
 const clientFeedback = [{
   name: 'perry lance',
@@ -64,12 +64,12 @@ export default function JobFeedback() {
             return (
               <Box key={index}>
                 <Box style={{ display: 'flex', width: 'fit-content', margin: '10px' }}>
-                  <Box><AccountCircleIcon style={{ color: '#9e9e9e', marginRight: '6px' }} /></Box>
+                  <Avatar style={{ marginRight: '10px' }} />
                   <Box>
-                    <Box>{item.name}</Box>
+                    <Typography>{item.name}</Typography>
                     <Box sx={{ display: 'flex' }}>
-                      <Rating value={item.value} readOnly style={{ marginRight: '10px' }} />
-                      <Box>{item.date}</Box>
+                      <Rating size="small" value={item.value} readOnly style={{ marginRight: '10px' }} />
+                      <Typography>{item.date}</Typography>
                     </Box>
                   </Box>
                 </Box >
@@ -80,10 +80,10 @@ export default function JobFeedback() {
           })
         }
       </Box>
-      <Box color='#336def' width='fit-content' display='flex'>
-        <Typography margin='6px'>See more</Typography>
+      <SeeMoreBox >
+        <Typography justifyContent='center'>See more</Typography>
         <KeyboardArrowDownIcon />
-      </Box>
+      </SeeMoreBox>
     </Paper>
   )
 }

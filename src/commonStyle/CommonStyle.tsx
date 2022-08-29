@@ -174,3 +174,15 @@ export const CustomTableHeadWithNoActions = (props: any) => {
     </TableHead>
   )
 }
+
+export const SeeMoreBox = styled(Box)(() => ({
+  height: '60px',
+  justifyContent: 'center',
+  alignItems: 'center',
+  color: 'blue',
+  display: 'flex',
+  '&:hover': {
+    cursor: 'pointer',
+    backgroundColor: '#cccccc',
+  }
+}))

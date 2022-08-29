@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import { Avatar, Box, Badge, } from '@mui/material';
+import { Avatar, Box, Badge, Paper, Typography, } from '@mui/material';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -33,22 +33,28 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export default function ClientPicture() {
   return (
-    <Box marginBottom='20px'>
-      <Box>
-        
+    <Paper style={{ marginBottom: '20px' }}>
+      <Box margin='20px'>
+        <Box>
+          <img
+            src="logo.png"
+            alt="userpicture"
+          />
+        </Box>
+        <Box>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="logo.png" />
+          </StyledBadge>
+        </Box>
+        <Box>
+          <Typography>Alex Lance</Typography>
+          <Typography>@alexlance</Typography>
+        </Box>
       </Box>
-      <Box>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="./userprofile.png" />
-        </StyledBadge>
-      </Box>
-      <Box>
-        
-      </Box>
-    </Box>
+    </Paper>
   )
 }

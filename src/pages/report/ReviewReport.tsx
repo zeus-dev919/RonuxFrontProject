@@ -16,32 +16,29 @@ import { TableBox } from "../../commonStyle/CommonStyle";
 
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
 import PopOverModal from "../../components/activity/admin/PopOverModal";
-import { CustomTableHeadWithOneActions } from "../../commonStyle/CommonStyle";
-import ReviewIDTableBody from "../../components/reviewID/ReviewIDTableBody";
+import { CustomTableHeadWithTwoActions } from "../../commonStyle/CommonStyle";
+import ReviewReportTableBody from "../../components/report/review/ReviewReportTableBody";
 //Reac API data here
 const data = [{
   name: 'Perry Lance',
-  status: 'Pending review',
-  admin: 'Perry Lance',
-  applicationTime: '2022-03-10',
-  reviewTime: '2022-03-11'
+  quantity: '10',
+  content: 'Job content',
+  admin: 'perry lance',
+  status: 'reviewed',
+  time: '2020-03-10'
 }, {
   name: 'Perry Lance',
-  status: 'Pending review',
-  admin: 'Perry Lance',
-  applicationTime: '2022-03-10',
-  reviewTime: '2022-03-11'
-}, {
-  name: 'Perry Lance',
-  status: 'Pending review',
-  admin: 'Perry Lance',
-  applicationTime: '2022-03-10',
-  reviewTime: '2022-03-11'
-},]
+  quantity: '10',
+  content: 'Job content',
+  admin: 'perry lance',
+  status: 'reviewed',
+  time: '2020-03-10'
+},
+]
 
 
-export default function ReviewID() {
-  const tableHeader = ["Name", "Review status", "Administrator", "Application time", "Review time"];
+export default function ReviewReport() {
+  const tableHeader = ["Name", "Reported quantity", "Reported content", "Administartor", "Review status", "Review time"];
   const rows = data;
   const [anchorEl, setAnchorEl] = React.useState<HTMLDivElement | null>(null);
   const open = Boolean(anchorEl);
@@ -56,14 +53,14 @@ export default function ReviewID() {
   return (
     <>
       <ListItem>
-        <Typography ml={1}> Admin activity log </Typography>
+        <Typography ml={1}> Review report </Typography>
       </ListItem>
       <Divider />
       <TableBox>
         <Box className="user-admin-console-container">
           <Toolbar className="user-admin-console-toolbar">
             <Typography className="user-admin-console-typography">
-              Currently showing all review identitiy verification
+              Currently showing all review reports
             </Typography>
           </Toolbar>
           <Box className="admin-user-console-choose">
@@ -75,8 +72,8 @@ export default function ReviewID() {
           <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} />
           <TableContainer component={Paper}>
             <Table>
-              <CustomTableHeadWithOneActions name={tableHeader} />
-              <ReviewIDTableBody rows={rows} />
+              <CustomTableHeadWithTwoActions name={tableHeader} />
+              <ReviewReportTableBody rows={rows} />
               <TableFooter>
                 <AdminUserPagination rows={rows} />
               </TableFooter>
