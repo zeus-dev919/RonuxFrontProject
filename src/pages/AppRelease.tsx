@@ -1,12 +1,10 @@
 import React from "react";
-import { Button, Grid, ListItem, Typography } from "@mui/material";
-import Divider from "@mui/material/Divider";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
-import SuperAdminTab from "../components/SuperAdminTab";
+import { Button, Grid, ListItem, Typography, Box, Divider, Paper, styled } from "@mui/material";
 import VersionList from "../components/appRelease/VersionList";
-import PopperButton from "../components/PopperButton";
-import CreateNewRole from "../components/adminDialogs/CreateNewRole";
+import VersionInfo from "../components/appRelease/VersionInfo";
+import VersionDescription from "../components/appRelease/VersionDescription";
+import CreateVersionModal from "../components/appRelease/CretateVersionModal";
+import MoreOptionButton from "../components/appRelease/MoreOptionButton";
 
 const CreateRoleButton = styled(Button)({
   borderRadius: 20,
@@ -44,18 +42,16 @@ export default function AppRelease() {
           </CustomPaper>
         </Grid>
         <Grid item xs={10}>
-          <CustomPaper variant="outlined">
-            <Typography m={2}> Super Administrator </Typography>
-            <PopperButton />
-            <Typography m={2} style={{ color: "grey" }}>
-              {" "}
-              The role has administrative rights{" "}
-            </Typography>
-            <SuperAdminTab />
-          </CustomPaper>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <VersionInfo />
+            <MoreOptionButton />
+          </Box>
+
+          <Divider />
+          <VersionDescription />
         </Grid>
       </Grid>
-      {open && <CreateNewRole onClose={handleClose} />}
+      {open && <CreateVersionModal onClose={handleClose} />}
     </>
   );
 }
