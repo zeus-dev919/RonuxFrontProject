@@ -56,7 +56,7 @@ export default function ReviewID() {
   return (
     <>
       <ListItem>
-        <Typography ml={1}> Admin activity log </Typography>
+        <Typography ml={1}> Review identity verification </Typography>
       </ListItem>
       <Divider />
       <TableBox>

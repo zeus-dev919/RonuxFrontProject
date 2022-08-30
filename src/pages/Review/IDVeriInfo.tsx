@@ -9,7 +9,7 @@ export default function JobDetails() {
   return (
     <>
       <ListItem>
-        <Typography ml={1}> Job Details </Typography>
+        <Typography ml={1}> Identity verification information </Typography>
       </ListItem>
       <Divider />
       <Box padding="5% 20% 10%">

@@ -1,6 +1,5 @@
 import { Paper, Typography, Avatar, Box } from "@mui/material";
 import React from "react";
-import { BlueButton } from "../../commonStyle/CommonStyle";
 import DeleteJobModal from "./DeleteJobModal";
 import MarkModal from "./MarkModal";
 
@@ -9,10 +8,8 @@ export default function JobDescription() {
     <Paper style={{ marginBottom: '20px', border: '1px solid #cccccc' }}>
       <Box padding='20px'>
         <Typography>
-          Job ID:
-        </Typography>
-        <Typography>
-          0123456789
+          <span>Job ID:</span>
+          <span>0123456789</span>
         </Typography>
         <Box style={{ display: 'flex', width: 'fit-content', margin: '10px' }}>
           <Avatar style={{ marginRight: '10px' }} />
@@ -34,15 +31,16 @@ export default function JobDescription() {
           In your proposal, please share a brief summary of your experience and tell us about a recent Android project, ideally one currently available on Google Play.
         </Typography>
         <Typography>
-          Job status:
+          <span>Job status: </span>
+          <span color="#cccccc">Valid</span>
         </Typography>
         <Typography>
-          Review status:
+          <span>Review status: </span>
+          <span color="#cccccc">Pending review</span>
         </Typography>
         <DeleteJobModal />
         <MarkModal />
       </Box>
-
     </Paper>
   )
 
