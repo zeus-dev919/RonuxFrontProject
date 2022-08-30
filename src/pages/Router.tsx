@@ -9,8 +9,7 @@ import SignIn from "./SignIn";
 import UserConsole from "./UserConsole";
 import EmailVerification from "./EmailVerification";
 import ResetPassword from "./ResetPassword";
-import ClientProfile from './profile/ClientProfile';
-import FreelancerProfile from "./profile/Freelancerprofile";
+import Profile from './profile'
 import BlockedIP from "./blocked/BlockedIP";
 import BlockedKeyword from "./blocked/BlockedKeyword";
 import AdminActivityLog from "./activityLog/admin";
@@ -20,6 +19,7 @@ import ReviewID from "./Review/ReviewID";
 import ReviewFreelancer from "./Review/ReviewFreelancer";
 import JobDetails from "./Review/JobDetails";
 import ReviewReport from "./report/ReviewReport";
+import AppRelease from "./AppRelease";
 
 function MainLayout() {
   return (
@@ -69,12 +69,8 @@ export default function Router() {
           element: <UserConsole />,
         },
         {
-          path: "/users/client",
-          element: <ClientProfile />
-        },
-        {
-          path: "/users/freelancer",
-          element: <FreelancerProfile />
+          path: "/users/:username",
+          element: <Profile />
         },
         {
           path: "/blocked-ips",
@@ -111,6 +107,10 @@ export default function Router() {
         {
           path: "/reports",
           element: <ReviewReport />
+        },
+        {
+          path: "/releases",
+          element: <AppRelease />
         },
       ],
     },

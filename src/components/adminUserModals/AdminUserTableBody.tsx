@@ -16,6 +16,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ResetPasswordModal from "./ResetPasswordModal";
 import PauseUserModal from "./PauseUserModal";
 import DeleteUserModal from "./DeleteUserModal";
+import { useNavigate } from "react-router-dom";
 
 const MuiChip = styled(Chip)(({ theme }) => ({
   "&:hover": {
@@ -38,6 +39,7 @@ export type adminUserDataType = {
 }
 
 export default function AdminUserTableBody(props: any) {
+  const navigate = useNavigate()
   const rows: Array<adminUserDataType> = props.rows;
   const [moreButton, setMoreButton] = React.useState<HTMLDivElement | null>(null);
   const open = Boolean(moreButton);
@@ -61,6 +63,7 @@ export default function AdminUserTableBody(props: any) {
               <Button
                 className="name-detail normal-text"
                 variant="text"
+                onClick={() => navigate(`/users/${row.name}`)}
               >
                 {row.name}
               </Button>

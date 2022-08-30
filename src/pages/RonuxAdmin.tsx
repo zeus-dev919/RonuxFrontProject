@@ -26,7 +26,7 @@ const data = [
     details: "Update privacy and terms",
     url: "/terms",
   },
-  { title: "App release", details: "Manage and release app", url: "/admins" },
+  { title: "App release", details: "Manage and release app", url: "/releases" },
   {
     title: "Administrator",
     details: "Add and specify adminstrators",
