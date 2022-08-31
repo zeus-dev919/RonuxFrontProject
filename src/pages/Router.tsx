@@ -17,7 +17,6 @@ import UserActivityLog from "./activityLog/user";
 import OccupationAndSkills from "./occupationAndSkills/OccupationAndSkills";
 import ReviewID from "./Review/ReviewID";
 import ReviewFreelancer from "./Review/ReviewFreelancer";
-import JobDetails from "./Review/JobDetails";
 import ReviewReport from "./report/ReviewReport";
 import AppRelease from "./AppRelease";
 import Job from "./Review/Job";
