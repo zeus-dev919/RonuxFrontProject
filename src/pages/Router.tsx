@@ -26,6 +26,7 @@ function MainLayout() {
     <>
       <MenuAppbar />
       <Outlet />
+
     </>
   );
 }
