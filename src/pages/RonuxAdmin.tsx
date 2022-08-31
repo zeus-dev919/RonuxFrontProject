@@ -74,7 +74,7 @@ const data = [
     details: "Review freelancer profile",
     url: "/freelancers",
   },
-  { title: "Review job", details: "Review client jobs", url: "/admins" },
+  { title: "Review job", details: "Review client jobs", url: "/jobs" },
   { title: "Review report", details: "Review user reports", url: "/admins" },
   { title: "Job proposal", details: "Manage job proposals", url: "/admins" },
   {
