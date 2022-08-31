@@ -20,6 +20,7 @@ import ReviewFreelancer from "./Review/ReviewFreelancer";
 import JobDetails from "./Review/JobDetails";
 import ReviewReport from "./report/ReviewReport";
 import AppRelease from "./AppRelease";
+import Job from "./Review/Job";
 
 function MainLayout() {
   return (
@@ -102,7 +103,7 @@ export default function Router() {
         },
         {
           path: "/jobs",
-          element: <JobDetails />
+          element: <Job />
         },
         {
           path: "/reports",

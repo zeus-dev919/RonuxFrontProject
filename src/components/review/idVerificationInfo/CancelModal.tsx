@@ -40,17 +40,22 @@ export default function CancelModal(props: any) {
         <DialogTitle
           style={{ color: "white", backgroundColor: "#336def" }}
         >
-          Unapproved reason
+          Cancel approve ID Verification
         </DialogTitle>
         <DialogContent style={{ marginTop: "20px" }}>
           <DialogContentText style={{ marginTop: "20px" }} >
-            <span>Unapproved reason</span>
-            <span></span>
+            Sure you want to cancel to approve identity verification of freelancer Perry Lance?
+          </DialogContentText>
+          <DialogContentText style={{ marginTop: "20px" }} >
+            <TextField label="Reject approve reason" defaultValue="Text description"></TextField>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
+          <DecideButton onClick={handleClose} autoFocus>
+            Cancel
+          </DecideButton>
           <DecideButton onClick={unblockClick} autoFocus>
-            Close
+            Cancel approve
           </DecideButton>
         </DialogActions>
       </Dialog>
