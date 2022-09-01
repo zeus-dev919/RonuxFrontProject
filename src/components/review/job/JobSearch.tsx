@@ -16,6 +16,7 @@ export default function JobSearch() {
   };
   return (
     <TextField
+      fullWidth
       size="small"
       variant="outlined"
       onChange={handleChange}
