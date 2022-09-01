@@ -4,11 +4,11 @@ import FilterConditions from '../../components/review/job/FilterConditions';
 import JobSearch from '../../components/review/job/JobSearch';
 import JobDescription from '../../components/jobDetails/JobDescription';
 
-export default function Job() {
+export default function Invitation() {
   return (
     <>
       <ListItem>
-        <Typography ml={1}> Review Job </Typography>
+        <Typography ml={1}>  Job Invitation </Typography>
       </ListItem>
       <Divider />
       <Box padding="2% 20% 10%">

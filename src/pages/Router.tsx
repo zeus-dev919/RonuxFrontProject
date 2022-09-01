@@ -21,6 +21,10 @@ import ReviewReport from "./report/ReviewReport";
 import AppRelease from "./AppRelease";
 import Job from "./Review/Job";
 import Contract from "./jobContract/Contract";
+import Proposal from "./proposal/Proposal";
+import Invitation from "./invitation/Invitation";
+import UserFeedback from "./userFeedback/UserFeedback";
+import Help from "./Help";
 
 function MainLayout() {
   return (
@@ -119,8 +123,21 @@ export default function Router() {
         },
         {
           path: "/proposals",
-          element: <Contract />
+          element: <Proposal />
         },
+        {
+          path: "/invitations",
+          element: <Invitation />
+        },
+        {
+          path: "/feedback",
+          element: <UserFeedback />
+        },
+        {
+          path: "/docs",
+          element: <Help />
+        },
+
       ],
     },
   ];

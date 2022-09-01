@@ -80,10 +80,10 @@ const data = [
   {
     title: "Job invitation",
     details: "Manage job invitations",
-    url: "/admins",
+    url: "/invitations",
   },
-  { title: "User feedback", details: "Manage user feedback", url: "/admins" },
-  { title: "Help doc", details: "Manage help doc", url: "/admins" },
+  { title: "User feedback", details: "Manage user feedback", url: "/feedback" },
+  { title: "Help doc", details: "Manage help doc", url: "/docs" },
   { title: "Rounx blog", details: "Manage ronux blog", url: "/admins" },
   { title: "Job contract", details: "Review job contracts", url: "/contracts" },
   {
