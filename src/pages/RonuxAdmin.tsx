@@ -75,8 +75,8 @@ const data = [
     url: "/freelancers",
   },
   { title: "Review job", details: "Review client jobs", url: "/jobs" },
-  { title: "Review report", details: "Review user reports", url: "/admins" },
-  { title: "Job proposal", details: "Manage job proposals", url: "/admins" },
+  { title: "Review report", details: "Review user reports", url: "/reports" },
+  { title: "Job proposal", details: "Manage job proposals", url: "/proposals" },
   {
     title: "Job invitation",
     details: "Manage job invitations",
@@ -85,7 +85,7 @@ const data = [
   { title: "User feedback", details: "Manage user feedback", url: "/admins" },
   { title: "Help doc", details: "Manage help doc", url: "/admins" },
   { title: "Rounx blog", details: "Manage ronux blog", url: "/admins" },
-  { title: "Job contract", details: "Review job contracts", url: "/admins" },
+  { title: "Job contract", details: "Review job contracts", url: "/contracts" },
   {
     title: "Meditation center",
     details: "Arbitration dispute contracts",
