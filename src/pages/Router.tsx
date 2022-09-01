@@ -25,6 +25,9 @@ import Proposal from "./proposal/Proposal";
 import Invitation from "./invitation/Invitation";
 import UserFeedback from "./userFeedback/UserFeedback";
 import Help from "./Help";
+import Blog from "./Blog";
+import MediationCenter from "./dispute/MediationCenter";
+import TransactionHistory from "./TransactionHistory";
 
 function MainLayout() {
   return (
@@ -137,7 +140,18 @@ export default function Router() {
           path: "/docs",
           element: <Help />
         },
-
+        {
+          path: "/blog",
+          element: <Blog />
+        },
+        {
+          path: "/disputes",
+          element: <MediationCenter />
+        },
+        {
+          path: "/transactions",
+          element: <TransactionHistory />
+        },
       ],
     },
   ];
