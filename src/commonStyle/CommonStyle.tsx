@@ -47,10 +47,10 @@ export const CustomForm = styled("form")({
 });
 
 export const FormBox = styled(Box)({
-  width: "30%",
-  marginLeft: "35%",
+  width: "25%",
+  marginLeft: "37%",
   alignContent: "center",
-  marginTop: "100px",
+  marginTop: "10%",
 });
 
 export const TabPanel = (props: any) => {

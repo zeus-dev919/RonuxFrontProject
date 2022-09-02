@@ -10,6 +10,7 @@ import {
   MenuItem,
   InputAdornment,
   IconButton,
+  Box
 } from "@mui/material";
 import { BlueButton, CustomForm, FormBox } from "./../commonStyle/CommonStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
@@ -107,7 +108,7 @@ export default function SignIn() {
             }}
           />
         </FormControl>
-        <div style={{ margin: "10px 0px" }}>
+        <Box style={{ margin: "10px 0px" }}>
           <Button
             className="normal-text round-button"
             variant="outlined"
@@ -118,7 +119,7 @@ export default function SignIn() {
           <BlueButton type="submit" style={{ float: "right" }}>
             Sign in
           </BlueButton>
-        </div>
+        </Box>
       </CustomForm>
       <FormControl sx={{ minWidth: "180px" }}>
         <Select defaultValue="English" value={language} onChange={handleChange}>
