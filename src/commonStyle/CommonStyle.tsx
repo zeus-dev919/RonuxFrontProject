@@ -53,6 +53,10 @@ export const FormBox = styled(Box)({
   marginTop: "10%",
 });
 
+export const FlexBox = styled(Box)({
+  display: 'flex',
+})
+
 export const TabPanel = (props: any) => {
   const { children, value, index, ...other } = props;
 
