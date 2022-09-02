@@ -12,6 +12,7 @@ import {
   IconButton,
   Box
 } from "@mui/material";
+import axios from "axios";
 import { BlueButton, CustomForm, FormBox } from "./../commonStyle/CommonStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +40,11 @@ export default function SignIn() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      navigate("/");
+      axios.post(`http://47.93.248.142:10000/admin/v1/sign-in`, {
+        email: formik.values.email,
+        password: formik.values.password,
+      }).then((res) => console.log('ok'));
+      //navigate("/");
     },
   });
 
