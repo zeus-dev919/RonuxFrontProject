@@ -1,7 +1,6 @@
 import * as React from "react";
 import { TextField, DialogContent, DialogContentText } from "@mui/material";
-import CustomModal from "./CustomModal";
-
+import { CustomModal } from "../../commonStyle/CommonStyle";
 export default function UserEmailModal() {
   return (
     <div>

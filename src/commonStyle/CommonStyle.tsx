@@ -89,38 +89,25 @@ export const TableBox = styled(Box)(() => ({
 }));
 
 export const CustomModal = (props: any) => {
-  const [open, setOpen] = React.useState(false);
-  const { name, children } = props;
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const { name, children, onClose } = props;
 
   return (
-    <Box
-      style={{ minWidth: '300px' }}>
-      <MenuItem onClick={handleClickOpen}>
+    <Dialog
+      maxWidth='xs'
+      style={{ width: '100%' }}
+      open={true}
+      onClose={onClose}
+    >
+      <DialogTitle className='dialog-title'>
         {name}
-      </MenuItem>
-      <Dialog
-        style={{ width: '20%', marginLeft: '40%', minWidth: '300px' }}
-        open={open}
-        onClose={handleClose}
-      >
-        <DialogTitle style={{ color: "white", backgroundColor: "#336def" }}>
-          {name}
-        </DialogTitle>
-        {children}
-        <DialogActions>
-          <BlueButton onClick={handleClose} autoFocus>
-            Apply
-          </BlueButton>
-        </DialogActions>
-      </Dialog>
-    </Box>
+      </DialogTitle>
+      {children}
+      <DialogActions>
+        <BlueButton onClick={onClose} autoFocus>
+          Apply
+        </BlueButton>
+      </DialogActions>
+    </Dialog>
   );
 }
 export const MuiChip = styled(Chip)(({ theme }) => ({

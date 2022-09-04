@@ -4,15 +4,15 @@ import {
   DialogContentText,
   TextField
 } from "@mui/material";
-import CustomModal from "./CustomModal";
+import { CustomModal } from "../../commonStyle/CommonStyle";
 
 export default function FirstNameModal(props: any) {
 
   return (
-    <CustomModal name="First name">
-      <DialogContent style={{ marginTop: "20px", width: 'fit-content' }}>
+    <CustomModal name='First name' onClose={props.onClose}>
+      <DialogContent style={{ marginTop: "20px" }}>
         <DialogContentText style={{ marginTop: "20px" }} >
-          <TextField label="Include" defaultValue="Perry"></TextField>
+          <TextField fullWidth label="Include" defaultValue="Perry"></TextField>
         </DialogContentText>
       </DialogContent>
     </CustomModal>

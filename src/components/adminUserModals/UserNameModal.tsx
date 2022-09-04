@@ -4,8 +4,7 @@ import {
   DialogContentText,
   TextField
 } from "@mui/material";
-import CustomModal from "./CustomModal";
-
+import { CustomModal } from "../../commonStyle/CommonStyle";
 export default function UserNameModal() {
 
   return (

@@ -5,8 +5,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import { TextField } from "@mui/material";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import InputAdornment from '@mui/material/InputAdornment';
-import CustomModal from "./CustomModal";
-
+import { CustomModal } from "../../commonStyle/CommonStyle";
 export default function LastSignInModal(props: any) {
   return (
     <CustomModal name="Last sign in time">
