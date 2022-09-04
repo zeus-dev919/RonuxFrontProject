@@ -38,7 +38,7 @@ export default function CancelModal(props: any) {
         onClose={handleClose}
       >
         <DialogTitle
-          style={{ color: "white", backgroundColor: "#336def" }}
+          className='dialog-title'
         >
           Cancel approve ID Verification
         </DialogTitle>

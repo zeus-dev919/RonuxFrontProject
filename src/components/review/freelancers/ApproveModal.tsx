@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import {
   DialogActions,
   Dialog,
@@ -8,11 +7,10 @@ import {
   DialogTitle,
   Box,
 } from "@mui/material";
+import { DecideButton, MuiChip } from "../../../commonStyle/CommonStyle";
 
-import { MuiChip, DecideButton } from "../../../commonStyle/CommonStyle";
 
-
-export default function ApproveModal(props: any) {
+export default function UnblockModal(props: any) {
   const [open, setOpen] = React.useState(false);
 
   //handle functions
@@ -33,19 +31,19 @@ export default function ApproveModal(props: any) {
         <MuiChip label="Approve" />
       </Box>
       <Dialog
-        maxWidth='xs'
-        style={{ width: '100%' }}
         open={open}
         onClose={handleClose}
+        maxWidth='xs'
+        style={{ width: '100%' }}
       >
         <DialogTitle
           className='dialog-title'
         >
-          Approve ID Verification
+          Approve freelancer
         </DialogTitle>
         <DialogContent style={{ marginTop: "20px" }}>
           <DialogContentText >
-            Sure you want to approve identity verification of freelancer Perry Lance?
+            Sure you want to approve the application of freelancer {props.name}?
           </DialogContentText>
         </DialogContent>
         <DialogActions>

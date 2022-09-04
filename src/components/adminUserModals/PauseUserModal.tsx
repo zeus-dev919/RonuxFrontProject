@@ -34,7 +34,7 @@ export default function PauseUserModal(props: any) {
 			>
 				<DialogTitle
 					id="responsive-dialog-title"
-					style={{ color: "white", backgroundColor: "#336def" }}
+					className='dialog-title'
 				>
 					Pause user {props.name}
 				</DialogTitle>

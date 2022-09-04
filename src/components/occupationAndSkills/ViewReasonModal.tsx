@@ -30,7 +30,7 @@ export default function ViewReasonModal(props: any) {
         onClose={handleClose}
       >
         <DialogTitle
-          style={{ color: "white", backgroundColor: "#336def" }}
+          className='dialog-title'
         >
           Delete reason
         </DialogTitle>

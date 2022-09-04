@@ -6,13 +6,12 @@ import {
   Checkbox
 } from "@mui/material";
 import { CustomModal } from "../../../commonStyle/CommonStyle";
-export default function ReviewStatusModal(props: any) {
+export default function ApprovalStatusModal(props: any) {
 
   return (
-    <CustomModal name="Review status" onClose={props.onClose}>
+    <CustomModal name="Approval status" onClose={props.onClose}>
       <DialogContent style={{ marginTop: "20px" }}>
         <FormGroup>
-          <FormControlLabel control={<Checkbox />} label="Pending review" />
           <FormControlLabel control={<Checkbox />} label="Approved" />
           <FormControlLabel control={<Checkbox />} label="Unapproved" />
         </FormGroup>

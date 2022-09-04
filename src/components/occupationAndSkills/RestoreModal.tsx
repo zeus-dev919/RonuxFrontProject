@@ -30,7 +30,7 @@ export default function RestoreModal(props: any) {
         onClose={handleClose}
       >
         <DialogTitle
-          style={{ color: "white", backgroundColor: "#336def" }}
+          className='dialog-title'
         >
           Restore skill {props.name}
         </DialogTitle>

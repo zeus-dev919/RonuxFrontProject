@@ -48,7 +48,7 @@ export default function ResetPasswordModal(props: any) {
           open={open}
           onClose={handleClose}
         >
-          <DialogTitle style={{ color: "white", backgroundColor: "#336def" }}>
+          <DialogTitle className='dialog-title'>
             Reset Password for {props.name}
           </DialogTitle>
           <DialogContent style={{ marginTop: "20px" }}>
@@ -77,7 +77,7 @@ export default function ResetPasswordModal(props: any) {
           onClose={handleClose}
         >
           <DialogTitle
-            style={{ color: "white", backgroundColor: "#336def" }}
+            className='dialog-title'
           >
             Password reset successful
           </DialogTitle>

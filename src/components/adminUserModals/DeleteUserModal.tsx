@@ -27,7 +27,7 @@ export default function DeleteUserModal(props: any) {
                 onClose={handleClose}
             >
                 <DialogTitle
-                    style={{ color: "white", backgroundColor: "#336def" }}
+                    className='dialog-title'
                 >
                     Delete user {props.name}
                 </DialogTitle>

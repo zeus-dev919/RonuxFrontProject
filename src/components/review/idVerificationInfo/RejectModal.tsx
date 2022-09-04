@@ -38,7 +38,7 @@ export default function RejectModal(props: any) {
         onClose={handleClose}
       >
         <DialogTitle
-          style={{ color: "white", backgroundColor: "#336def" }}
+          className='dialog-title'
         >
           Reject approve ID Verification
         </DialogTitle>

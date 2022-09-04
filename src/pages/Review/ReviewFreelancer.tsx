@@ -15,7 +15,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { TableBox } from "../../commonStyle/CommonStyle";
 
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
-import PopOverModal from "../../components/activity/admin/PopOverModal";
+import PopOverModal from "../../components/review/freelancers/PopOverModal";
 import { CustomTableHeadWithTwoActions } from "../../commonStyle/CommonStyle";
 import ReviewFreelancersTableBody from "../../components/review/freelancers/ReviewFreelancersTableBody";
 

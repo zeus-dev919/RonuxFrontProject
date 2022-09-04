@@ -44,7 +44,7 @@ export default function MarkModal(props: any) {
         onClose={handleClose}
       >
         <DialogTitle
-          style={{ color: "white", backgroundColor: "#336def" }}
+          className='dialog-title'
         >
           Mark as reviewed
         </DialogTitle>
