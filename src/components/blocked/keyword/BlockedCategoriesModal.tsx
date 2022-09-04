@@ -12,7 +12,7 @@ export default function BlockedCategoriesModal(props: any) {
 
   return (
     <CustomModal name="Blocked categories" onClose={props.onClose}>
-      <DialogContent style={{ marginTop: "20px", width: 'fit-content' }}>
+      <DialogContent style={{ marginTop: "20px" }}>
         <FormControl>
           <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
           <RadioGroup

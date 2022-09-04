@@ -12,7 +12,7 @@ import {
   ListItem
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { DecideButton } from "../../commonStyle/CommonStyle";
+import { DecideButton, TableBox } from "../../commonStyle/CommonStyle";
 
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
 import { CustomTableHeadWithOneActions } from "../../commonStyle/CommonStyle";
@@ -89,7 +89,7 @@ export default function BlockedIP() {
         <Typography ml={1}> Blocked keyword </Typography>
       </ListItem>
       <Divider />
-      <Box style={{ marginLeft: '7%', marginRight: '7%', marginTop: '4%' }}>
+      <TableBox>
         <Box className="user-admin-console-container">
           <Toolbar className="blocked-toolbar">
             <Typography className="user-admin-console-typography">
@@ -115,7 +115,7 @@ export default function BlockedIP() {
             </Table>
           </TableContainer>
         </Box>
-      </Box>
+      </TableBox>
       <AddBlockedKeywordModal addKeyword={addKeyword} addKeywordClick={addKeywordClick} />
     </>
   )

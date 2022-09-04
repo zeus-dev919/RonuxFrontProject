@@ -54,7 +54,6 @@ export default function PopOverModal(props: any) {
         <MenuItem onClick={() => blockedCategoriesClick()}>Blocked categories</MenuItem>
         <MenuItem onClick={() => blockedRangesClick()}>Blocked ranges</MenuItem>
         <MenuItem onClick={() => blockedTimeClick()}>Blocked time</MenuItem>
-        <MenuItem onClick={unblockKeywordClick}>Recently unblock IPs</MenuItem>
         <MenuItem onClick={unblockKeywordClick}>Recently unblock Keywords</MenuItem>
       </Popover>
       {

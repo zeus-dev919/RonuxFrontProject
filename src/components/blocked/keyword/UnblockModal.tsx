@@ -14,7 +14,7 @@ import { DecideButton } from "../../../commonStyle/CommonStyle";
 import { MuiChip } from "../../../commonStyle/CommonStyle";
 
 
-export default function RestoreModal(props: any) {
+export default function UnblockModal(props: any) {
   const [open, setOpen] = React.useState(false);
 
   //handle functions
@@ -37,18 +37,20 @@ export default function RestoreModal(props: any) {
       <Dialog
         open={open}
         onClose={handleClose}
+        maxWidth='xs'
+        style={{ width: '100%' }}
       >
         <DialogTitle
-          style={{ color: "white", backgroundColor: "#336def" }}
+          className='dialog-title'
         >
           Delete user {props.name}
         </DialogTitle>
         <DialogContent style={{ marginTop: "20px" }}>
-          <DialogContentText style={{ marginTop: "20px" }} >
+          <DialogContentText >
             Sure you want to unblock the keyword {props.keyword}?
           </DialogContentText>
           <DialogContentText style={{ marginTop: "20px" }} >
-            <TextField label="Unblock Reason" defaultValue="Operation error" sx={{ m: 1, width: '60ch' }}></TextField>
+            <TextField fullWidth label="Unblock Reason" defaultValue="Operation error"></TextField>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

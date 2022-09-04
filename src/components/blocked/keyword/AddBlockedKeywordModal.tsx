@@ -48,18 +48,19 @@ export default function AddBlockedKeywordModal(props: any) {
     <Dialog
       open={open}
       onClose={props.addIPClick}
-      style={{ width: '30%', marginLeft: '35%', minWidth: '500px' }}
+      maxWidth='xs'
+      style={{ width: '100%' }}
     >
       <DialogTitle
-        style={{ color: "white", backgroundColor: "#336def" }}
+        className='dialog-title'
       >
         Add blocked IP
       </DialogTitle>
       <DialogContent style={{ marginTop: "20px" }}>
         <DialogContentText style={{ marginTop: "20px" }} >
-          <TextField label="Blocked keyword" defaultValue="Test" sx={{ m: 1, width: '40ch' }}></TextField>
+          <TextField fullWidth label="Blocked keyword" defaultValue="Test" />
         </DialogContentText>
-        <FormControl sx={{ m: 1, width: '41ch' }}>
+        <FormControl fullWidth sx={{ mt: 2 }}>
           <InputLabel>Blocked category</InputLabel>
           <Select
             value={category}
@@ -76,7 +77,7 @@ export default function AddBlockedKeywordModal(props: any) {
             ))}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, width: '41ch' }}>
+        <FormControl fullWidth sx={{ mt: 2 }}>
           <InputLabel>Blocked ranges</InputLabel>
           <Select
             value={category}

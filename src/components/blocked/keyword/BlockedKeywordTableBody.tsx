@@ -5,7 +5,7 @@ import {
   TableRow,
   Box
 } from "@mui/material";
-import RestoreModal from "./RestoreModal";
+import UnblockModal from "./UnblockModal";
 
 export type adminUserDataType = {
   keyword: string,
@@ -32,7 +32,7 @@ export default function BlockedKeywordTableBody(props: any) {
           <TableCell style={{ width: '20%' }}>{row.time}</TableCell>
           <TableCell style={{ width: '20%' }} align="right">
             <Box className="hidden">
-              <RestoreModal keyword={row.keyword} />
+              <UnblockModal keyword={row.keyword} />
             </Box>
           </TableCell>
         </TableRow>
