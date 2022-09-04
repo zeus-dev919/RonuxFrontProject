@@ -79,6 +79,7 @@ export default function OccupationAndSkills() {
     setHeader("Currently showing recently deleted skills");
     setTableHeader(["Skill name", "Skill category", "Administrator", "Days remaining before deletion"]);
     setClear(true);
+    setAnchorEl(null);
   }
   const clearClick = () => {
     setClear(false);
