@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import { Avatar, Box, Badge, Paper, Typography, } from '@mui/material';
+import { styled, Avatar, Box, Badge, Paper, Typography, } from '@mui/material';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -37,8 +36,8 @@ export default function ClientPicture() {
       <Box margin='20px'>
         <Box>
           <img
-            width='50%'
-            src="logo.png"
+
+            src="./logo.png"
             alt="userpicture"
           />
         </Box>
