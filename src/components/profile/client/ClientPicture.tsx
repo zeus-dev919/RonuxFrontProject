@@ -33,10 +33,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 export default function ClientPicture() {
   return (
     <Paper style={{ marginBottom: '20px', height: '40%' }}>
-      <Box margin='20px'>
-        <Box>
+      <Box padding='20px'>
+        <Box height='50%'>
           <img
-
             src="./logo.png"
             alt="userpicture"
           />
@@ -52,7 +51,7 @@ export default function ClientPicture() {
         </Box>
         <Box>
           <Typography>Alex Lance</Typography>
-          <Typography>@alexlance</Typography>
+          <Typography className='typography-soft'>@alexlance</Typography>
         </Box>
       </Box>
     </Paper>

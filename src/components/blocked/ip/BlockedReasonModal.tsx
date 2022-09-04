@@ -9,7 +9,7 @@ import { CustomModal } from "../../../commonStyle/CommonStyle";
 export default function BlockedReasonModal(props: any) {
 
   return (
-    <CustomModal name="Blocked reason">
+    <CustomModal name="Blocked reason" onClose={props.onClose}>
       <DialogContent style={{ marginTop: "20px", width: 'fit-content' }}>
         <DialogContentText style={{ marginTop: "20px" }} >
           <TextField label="Include" defaultValue="Post violation information"></TextField>
