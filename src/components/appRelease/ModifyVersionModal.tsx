@@ -1,11 +1,16 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import { Button } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import {
+  styled,
+  FormControlLabel,
+  Checkbox,
+  Button,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Dialog,
+  TextField,
+  Box
+} from '@mui/material';
 
 const DialogTextField = styled(TextField)({
   width: '100%',
@@ -22,10 +27,14 @@ export default function ModifyVersionModal(props: any) {
         <DialogTextField label="App install package" defaultValue="App.name.apk" />
         <DialogTextField label="Version description" />
       </DialogContent>
-      <DialogActions>
-        <Button className='normal-text round-button' onClick={props.onClose}>Cancel</Button>
-        <Button className='normal-text round-button' onClick={props.onClose}>Create</Button>
-      </DialogActions>
+      <Box display='flex' justifyContent='space-between' alignItems='baseline'>
+        <FormControlLabel style={{ marginLeft: '1em' }} control={<Checkbox />} label='Lowest version' />
+        <DialogActions>
+          <Button className='normal-text round-button' onClick={props.onClose}>Cancel</Button>
+          <Button className='normal-text round-button' onClick={props.onClose}>Save</Button>
+        </DialogActions>
+      </Box>
+
     </Dialog>
   )
 }

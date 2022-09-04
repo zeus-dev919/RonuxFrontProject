@@ -1,11 +1,14 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import { Button } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import {
+  Button,
+  styled,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Dialog,
+  TextField,
+} from '@mui/material';
+
 
 const DialogTextField = styled(TextField)({
   width: '100%',
@@ -21,10 +24,10 @@ export default function CreateVersionModal(props: any) {
         <DialogTextField label="Version name" defaultValue="2.1.0" />
         <DialogTextField label="App install package" defaultValue="App.name.apk" />
         <DialogTextField label="Version description" />
-
       </DialogContent>
 
       <DialogActions>
+
         <Button className='normal-text round-button' onClick={props.onClose}>Cancel</Button>
         <Button className='normal-text round-button' onClick={props.onClose}>Create</Button>
       </DialogActions>
