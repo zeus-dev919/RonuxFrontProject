@@ -23,6 +23,7 @@ export default function CreateVersionModal(props: any) {
         <DialogTextField label="Version description" />
 
       </DialogContent>
+
       <DialogActions>
         <Button className='normal-text round-button' onClick={props.onClose}>Cancel</Button>
         <Button className='normal-text round-button' onClick={props.onClose}>Create</Button>
