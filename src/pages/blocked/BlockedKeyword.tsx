@@ -65,11 +65,12 @@ export default function BlockedIP() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const unblockIPClick = () => {
+  const unblockKeywordClick = () => {
     setHeader("Currently showing recently unblocked keywords");
     setTableHeader(["Unblock keyword", "Unblock category", "Administrator", "Unblock range", "Days remaining before deletion"]);
     setRows(deletedData);
     setClear(true);
+    setAnchorEl(null);
   }
   const clearClick = () => {
     setClear(false);
@@ -103,7 +104,7 @@ export default function BlockedIP() {
             </div>
             {clear && <div onClick={clearClick} className="user-admin-console-clear-filters">Clear filters</div>}
           </div>
-          <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} unblockIPClick={unblockIPClick} />
+          <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} unblockKeywordClick={unblockKeywordClick} />
           <TableContainer component={Paper}>
             <Table>
               <CustomTableHeadWithOneActions name={tableHeader} />

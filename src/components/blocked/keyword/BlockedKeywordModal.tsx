@@ -8,10 +8,10 @@ import { CustomModal } from "../../../commonStyle/CommonStyle";
 export default function BlockedKeywordModal(props: any) {
 
   return (
-    <CustomModal name="Blocked keyword">
+    <CustomModal name="Blocked keyword" onClose={props.onClose}>
       <DialogContent style={{ marginTop: "20px", width: 'fit-content' }}>
         <DialogContentText style={{ marginTop: "20px" }} >
-          <TextField label="Include" defaultValue="test"></TextField>
+          <TextField fullWidth label="Include" defaultValue="test"></TextField>
         </DialogContentText>
       </DialogContent>
     </CustomModal>

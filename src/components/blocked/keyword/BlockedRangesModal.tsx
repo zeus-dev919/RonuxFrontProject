@@ -9,7 +9,7 @@ import { CustomModal } from "../../../commonStyle/CommonStyle";
 export default function BlockedRangesModal(props: any) {
 
   return (
-    <CustomModal name="Blocked ranges">
+    <CustomModal name="Blocked ranges" onClose={props.onClose}>
       <DialogContent style={{ marginTop: "20px", width: 'fit-content' }}>
         <FormGroup>
           <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />

@@ -4,15 +4,11 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
 import { TextField } from "@mui/material";
 import { DecideButton } from "../../../commonStyle/CommonStyle";
 
 export default function AddBlockedIPModal(props: any) {
   const [open, setOpen] = React.useState(false);
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
   React.useEffect(() => {
     setOpen(props.addIP)
   }, [props.addIP]);
@@ -27,29 +23,29 @@ export default function AddBlockedIPModal(props: any) {
 
   return (
     <Dialog
-      fullScreen={fullScreen}
       open={open}
       onClose={props.addIPClick}
-      style={{ width: '30%', marginLeft: '35%', minWidth: '500px' }}
+      maxWidth='xs'
+      style={{ width: '100%' }}
     >
       <DialogTitle
-        style={{ color: "white", backgroundColor: "#336def" }}
+        className='dialog-title'
       >
         Add blocked IP
       </DialogTitle>
       <DialogContent style={{ marginTop: "20px" }}>
         <DialogContentText style={{ marginTop: "20px" }} >
-          <TextField label="Blocked IP" defaultValue="194.5.48.231" sx={{ m: 1, width: '40ch' }}></TextField>
+          <TextField fullWidth label="Blocked IP" defaultValue="194.5.48.231"></TextField>
         </DialogContentText>
         <DialogContentText style={{ marginTop: "20px" }} >
-          <TextField label="Blocked reason" defaultValue="Post violation information" sx={{ m: 1, width: '40ch' }}></TextField>
+          <TextField fullWidth label="Blocked reason" defaultValue="Post violation information"></TextField>
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <DecideButton onClick={props.addIPClick} autoFocus>
+        <DecideButton onClick={props.addIPClick} >
           Cancel
         </DecideButton>
-        <DecideButton onClick={addClick} autoFocus>
+        <DecideButton onClick={addClick} >
           Add
         </DecideButton>
       </DialogActions>

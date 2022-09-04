@@ -10,9 +10,9 @@ export default function BlockedReasonModal(props: any) {
 
   return (
     <CustomModal name="Blocked reason" onClose={props.onClose}>
-      <DialogContent style={{ marginTop: "20px", width: 'fit-content' }}>
+      <DialogContent style={{ marginTop: "20px" }}>
         <DialogContentText style={{ marginTop: "20px" }} >
-          <TextField label="Include" defaultValue="Post violation information"></TextField>
+          <TextField fullWidth label="Include" defaultValue="Post violation information"></TextField>
         </DialogContentText>
       </DialogContent>
     </CustomModal>

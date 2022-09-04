@@ -66,6 +66,7 @@ export default function BlockedIP() {
     setTableHeader(["Unblock IP", "Unblock reason", "Administrator", "Days remaining before deletion"]);
     setRows(deletedData);
     setClear(true);
+    setAnchorEl(null);
   }
   const clearClick = () => {
     setClear(false);

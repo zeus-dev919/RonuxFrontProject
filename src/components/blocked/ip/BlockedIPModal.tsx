@@ -9,9 +9,9 @@ export default function BlockedIPModal(props: any) {
 
   return (
     <CustomModal name="Blocked IP" onClose={props.onClose}>
-      <DialogContent style={{ marginTop: "20px", width: 'fit-content' }}>
+      <DialogContent style={{ marginTop: "20px" }}>
         <DialogContentText style={{ marginTop: "20px" }} >
-          <TextField label="Match" defaultValue="194.5.48.231"></TextField>
+          <TextField fullWidth label="Match" defaultValue="194.5.48.231"></TextField>
         </DialogContentText>
       </DialogContent>
     </CustomModal>

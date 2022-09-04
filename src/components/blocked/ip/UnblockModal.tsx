@@ -43,18 +43,20 @@ export default function UnblockModal(props: any) {
       <Dialog
         open={open}
         onClose={handleClose}
+        maxWidth='xs'
+        style={{ width: '100%' }}
       >
         <DialogTitle
-          style={{ color: "white", backgroundColor: "#336def" }}
+          className='dialog-title'
         >
           Delete user {props.name}
         </DialogTitle>
         <DialogContent style={{ marginTop: "20px" }}>
-          <DialogContentText style={{ marginTop: "20px" }} >
+          <DialogContentText >
             Sure you want to unblock the IP {props.ip}?
           </DialogContentText>
           <DialogContentText style={{ marginTop: "20px" }} >
-            <TextField label="Unblock Reason" defaultValue="Operation error" sx={{ m: 1, width: '60ch' }}></TextField>
+            <TextField fullWidth label="Unblock Reason" defaultValue="Operation error"></TextField>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
