@@ -21,12 +21,9 @@ export default function CustomModal(props: any) {
 
   return (
     <React.Fragment>
-      <MenuItem onClick={handleClickOpen}>
-        {name}
-      </MenuItem>
       <Dialog
         style={{ width: '20%', marginLeft: '40%', minWidth: '300px' }}
-        open={open}
+        open={true}
         onClose={handleClose}
       >
         <DialogTitle style={{ color: "white", backgroundColor: "#336def" }}>
