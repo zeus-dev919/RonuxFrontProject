@@ -11,18 +11,15 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 export default function UpdateTimeModal(props: any) {
 
   return (
-    <CustomModal name="Update time">
+    <CustomModal name="Update time" onClose={props.onClose}>
       <DialogContent style={{ marginTop: "20px" }}>
         <DialogContentText style={{ marginTop: "20px" }} >
-          <TextField label="Start date" defaultValue="2020-01-01" InputProps={{ endAdornment: <InputAdornment position="start"><CalendarMonthIcon /></InputAdornment>, }}>
-          </TextField>
+          <TextField fullWidth label="Start date" defaultValue="2020-01-01" InputProps={{ endAdornment: <InputAdornment position="start"><CalendarMonthIcon /></InputAdornment>, }} />
         </DialogContentText>
       </DialogContent>
       <DialogContent >
-        <DialogContentText>
-          <TextField label="End date" defaultValue="2020-03-14" InputProps={{ endAdornment: <InputAdornment position="start"><CalendarMonthIcon /></InputAdornment>, }}></TextField>
-        </DialogContentText>
+        <TextField fullWidth label="End date" defaultValue="2020-03-14" InputProps={{ endAdornment: <InputAdornment position="start"><CalendarMonthIcon /></InputAdornment>, }} />
       </DialogContent>
-    </CustomModal>
+    </CustomModal >
   );
 }

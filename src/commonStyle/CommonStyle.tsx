@@ -110,7 +110,7 @@ export const CustomModal = (props: any) => {
     </Dialog>
   );
 }
-export const MuiChip = styled(Chip)(({ theme }) => ({
+export const MuiChip = styled(Chip)(() => ({
   "&:hover": {
     background: "#ccccff",
   },

@@ -48,17 +48,18 @@ export default function ModifySkillModal(props: any) {
         <MuiChip label="Modify skill" />
       </Box>
       <Dialog
+        maxWidth='xs'
+        style={{ width: '100%' }}
         open={open}
         onClose={() => setOpen(false)}
-        style={{ width: '30%', marginLeft: '35%', minWidth: '400px' }}
       >
         <DialogTitle
-          style={{ color: "white", backgroundColor: "#336def" }}
+          className='dialog-title'
         >
           Modify skill
         </DialogTitle>
         <DialogContent>
-          <FormControl sx={{ m: 1, width: '41ch' }}>
+          <FormControl fullWidth sx={{ marginTop: '20px' }} >
             <InputLabel>Language</InputLabel>
             <Select
               value={category}
@@ -75,11 +76,11 @@ export default function ModifySkillModal(props: any) {
               ))}
             </Select>
           </FormControl>
-          <DialogContentText >
-            <TextField label="Skill name" defaultValue="Java" sx={{ m: 1, width: '40ch' }}></TextField>
+          <DialogContentText sx={{ marginTop: '20px' }} >
+            <TextField fullWidth label="Skill name" defaultValue="Java" ></TextField>
           </DialogContentText>
-          <DialogContentText>
-            <TextField label="Skill slug" defaultValue="java" sx={{ m: 1, width: '40ch' }}></TextField>
+          <DialogContentText sx={{ marginTop: '20px' }}>
+            <TextField fullWidth label="Skill slug" defaultValue="java" ></TextField>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

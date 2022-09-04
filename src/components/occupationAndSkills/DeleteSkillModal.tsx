@@ -27,20 +27,22 @@ export default function DeleteSkillModal(props: any) {
         <MuiChip label="Delete skill" />
       </Box>
       <Dialog
+        maxWidth='xs'
+        style={{ width: '100%' }}
         open={open}
         onClose={handleClose}
       >
         <DialogTitle
-          style={{ color: "white", backgroundColor: "#336def" }}
+          className='dialog-title'
         >
           Delete skill {props.name}
         </DialogTitle>
         <DialogContent style={{ marginTop: "20px" }}>
-          <DialogContentText style={{ marginTop: "20px" }} >
+          <DialogContentText >
             Sure you want to delete this skill?
           </DialogContentText>
           <DialogContentText style={{ marginTop: "20px" }} >
-            <TextField label="Delete Reason" defaultValue="Text description" sx={{ m: 1, width: '60ch' }}></TextField>
+            <TextField fullWidth label="Delete Reason" defaultValue="Text description"></TextField>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

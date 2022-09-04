@@ -43,17 +43,18 @@ export default function AddSkillModal(props: any) {
   }
   return (
     <Dialog
+      maxWidth='xs'
+      style={{ width: '100%' }}
       open={open}
       onClose={props.addSkillClick}
-      style={{ width: '30%', marginLeft: '35%', minWidth: '400px' }}
     >
       <DialogTitle
-        style={{ color: "white", backgroundColor: "#336def" }}
+        className='dialog-title'
       >
         Add skill
       </DialogTitle>
       <DialogContent>
-        <FormControl sx={{ m: 1, width: '41ch' }}>
+        <FormControl style={{ marginTop: "20px" }} fullWidth>
           <InputLabel>Language</InputLabel>
           <Select
             value={category}
@@ -70,11 +71,11 @@ export default function AddSkillModal(props: any) {
             ))}
           </Select>
         </FormControl>
-        <DialogContentText >
-          <TextField label="Skill name" defaultValue="Java" sx={{ m: 1, width: '40ch' }}></TextField>
+        <DialogContentText style={{ marginTop: "20px" }} >
+          <TextField fullWidth label="Skill name" defaultValue="Java"></TextField>
         </DialogContentText>
-        <DialogContentText>
-          <TextField label="Skill slug" defaultValue="java" sx={{ m: 1, width: '40ch' }}></TextField>
+        <DialogContentText style={{ marginTop: "20px" }}>
+          <TextField fullWidth label="Skill slug" defaultValue="java"></TextField>
         </DialogContentText>
       </DialogContent>
       <DialogActions>
