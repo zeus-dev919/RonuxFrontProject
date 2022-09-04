@@ -38,13 +38,14 @@ export default function PopOverModal(props: any) {
         }}
       >
         <MenuItem onClick={() => setFirstNameOpen(true)}>First name</MenuItem>
-        <LastNameModal />
-        <UserNameModal />
-        <UserTypesModal />
-        <UserEmailModal />
-        <AccountStatusModal />
-        <JoinDateModal />
-        <LastSignInModal />
+        <MenuItem onClick={() => setLastNameOpen(true)}>Last name</MenuItem>
+        <MenuItem onClick={() => setUserNameOpen(true)}>First name</MenuItem>
+        <MenuItem onClick={() => setUserTypeOpen(true)}>First name</MenuItem>
+        <MenuItem onClick={() => setUserEmailOpen(true)}>First name</MenuItem>
+        <MenuItem onClick={() => setAccountStatusOpen(true)}>First name</MenuItem>
+        <MenuItem onClick={() => setJoinDateOpen(true)}>First name</MenuItem>
+        <MenuItem onClick={() => setLastSignInOpen(true)}>First name</MenuItem>
+
         <MenuItem onClick={deletedUserClick}>Recently deleted users</MenuItem>
       </Popover>
       {
