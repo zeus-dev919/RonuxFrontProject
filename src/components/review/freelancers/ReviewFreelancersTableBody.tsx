@@ -9,7 +9,8 @@ import {
   Button
 } from "@mui/material";
 import { MuiChip } from "../../../commonStyle/CommonStyle";
-import ApproveModal from "../idVerificationInfo/ApproveModal";
+import ApproveModal from "./ApproveModal";
+import RejectApproveModal from "./RejectApproveModal";
 
 export type reviewIDDataType = {
   name: string,
@@ -49,7 +50,7 @@ export default function ReviewFreelancersTableBody(props: any) {
           </TableCell>
           <TableCell align="right">
             <Box className="hidden">
-              <MuiChip label="Reject Approve" />
+              <RejectApproveModal name={row.name} />
             </Box>
           </TableCell>
         </TableRow>
