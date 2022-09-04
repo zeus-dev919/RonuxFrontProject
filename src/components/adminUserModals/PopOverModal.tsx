@@ -21,6 +21,10 @@ export default function PopOverModal(props: any) {
   const [accountStatusOpen, setAccountStatusOpen] = React.useState(false);
   const [joinDateOpen, setJoinDateOpen] = React.useState(false);
   const [lastSignInOpen, setLastSignInOpen] = React.useState(false);
+  const FirstNameClick = () => {
+    setFirstNameOpen(true);
+    handleClose();
+  }
 
   return (
     <Box>
@@ -37,7 +41,7 @@ export default function PopOverModal(props: any) {
           horizontal: "left",
         }}
       >
-        <MenuItem onClick={() => setFirstNameOpen(true)}>First name</MenuItem>
+        <MenuItem onClick={() => FirstNameClick}>First name</MenuItem>
         <MenuItem onClick={() => setLastNameOpen(true)}>Last name</MenuItem>
         <MenuItem onClick={() => setUserNameOpen(true)}>First name</MenuItem>
         <MenuItem onClick={() => setUserTypeOpen(true)}>First name</MenuItem>
