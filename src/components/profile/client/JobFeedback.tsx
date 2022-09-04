@@ -5,8 +5,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { SeeMoreBox } from '../../../commonStyle/CommonStyle';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 10,
-  borderRadius: 5,
+  height: 13,
+  borderRadius: 6,
   margin: 10,
   [`&.${linearProgressClasses.colorPrimary}`]: {
     backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
