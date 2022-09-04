@@ -6,13 +6,13 @@ import {
 } from "@mui/material";
 import { CustomModal } from "../../../commonStyle/CommonStyle";
 
-export default function UserNameModal() {
+export default function UserNameModal(props: any) {
 
   return (
-    <CustomModal name="Username">
-      <DialogContent style={{ marginTop: "20px", width: 'fit-content' }}>
+    <CustomModal name="Username" onClose={props.onClose}>
+      <DialogContent style={{ marginTop: "20px" }}>
         <DialogContentText style={{ marginTop: "20px" }} >
-          <TextField label="Match" defaultValue="usertcqq"></TextField>
+          <TextField fullWidth label="Match" defaultValue="usertcqq"></TextField>
         </DialogContentText>
       </DialogContent>
     </CustomModal>
