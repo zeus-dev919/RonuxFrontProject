@@ -2,23 +2,22 @@ import React, { useState } from "react";
 import {
   Divider,
   Grid,
-  Input,
   ListItem,
   TextField,
   Typography,
+  styled,
+  Paper,
+  List,
+  ListItemButton,
+  ListItemText,
+  Tabs,
+  Tab,
+  Box,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import { TabPanel } from "../commonStyle/CommonStyle";
-import Box from "@mui/material/Box";
+
+import { TabPanel, BlueButton } from "../commonStyle/CommonStyle";
 import { FileUploader } from "react-drag-drop-files";
 import { useNavigate } from "react-router-dom";
-import { BlueButton } from "./../commonStyle/CommonStyle";
 
 const CustomPaper = styled(Paper)({
   height: "100vh",
