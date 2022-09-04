@@ -77,7 +77,7 @@ export default function PrivacyTerms() {
                 onClick={() => setSelectedIndex(1)}
               >
                 <ListItemText
-                  style={{ paddingLeft: "10px" }}
+                  style={{ paddingLeft: "10px", marginBottom: '20px' }}
                   id={"labelId"}
                   primary={"Chinese (Simplified)"}
                   className={selectedIndex === 1 ? "list-active" : ""}
@@ -128,12 +128,12 @@ export default function PrivacyTerms() {
                 style={{ marginLeft: "30px" }}
               >
                 <Tab
-                  label="Administrators"
+                  label="Edit"
                   {...a11yProps(0)}
                   className="normal-text"
                 />
                 <Tab
-                  label="Permissions"
+                  label="Preview"
                   {...a11yProps(1)}
                   className="normal-text"
                 />
