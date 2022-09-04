@@ -10,12 +10,15 @@ export default function VersionInfo() {
       </Typography>
       <Typography>
         <span>Create time: </span>
+        <span>2020-11-24 </span>
       </Typography>
       <Typography>
         <span>Release time: </span>
+        <span>2020-12-12 </span>
       </Typography>
       <Typography>
         <span>Update time: </span>
+        <span>2020-12-15 </span>
       </Typography>
     </Box>
   )

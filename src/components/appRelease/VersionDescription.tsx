@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography, Box } from '@mui/material'
 export default function VersionDescription() {
   return (
-    <Box p={2}>
+    <Box p={2} marginLeft='1em'>
       <Typography> Version description </Typography>
       <ul>
         <li>Updated header title strings to match spec (d827426)</li>
@@ -12,6 +12,6 @@ export default function VersionDescription() {
         <li> Fixed the filled range with RTL layout (ea76386)Delay showing validation error by 1 second (5541f02)</li>
         <li>Updates the color of the month labels in fullscreen mode (c65a262)</li>
       </ul>
-    </Box>
+    </Box >
   )
 }

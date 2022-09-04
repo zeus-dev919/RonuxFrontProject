@@ -42,11 +42,10 @@ export default function AppRelease() {
           </CustomPaper>
         </Grid>
         <Grid item xs={10}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', marginLeft: '1em' }}>
             <VersionInfo />
             <MoreOptionButton />
           </Box>
-
           <Divider />
           <VersionDescription />
         </Grid>

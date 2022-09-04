@@ -159,10 +159,10 @@ export default function PrivacyTerms() {
                     marginTop: "37px",
                   }}
                 >
-                  <div style={{ marginLeft: "10px" }}>
+                  <Box style={{ marginLeft: "10px" }}>
                     Attach files by dragging & dropping, selecting or pasting
                     them.
-                  </div>
+                  </Box>
                 </Box>
               </FileUploader>
               <BlueButton style={{ float: "right", marginTop: "15px" }}>
