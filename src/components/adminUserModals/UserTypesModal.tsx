@@ -8,10 +8,10 @@ import {
 } from "@mui/material";
 import { CustomModal } from "../../commonStyle/CommonStyle";
 
-export default function UserTypesModal() {
+export default function UserTypesModal(props: any) {
   return (
     <div>
-      <CustomModal name="User types">
+      <CustomModal name="User types" onClose={props.onClose}>
         <DialogContent style={{ marginTop: "20px" }}>
           <DialogContentText style={{ marginTop: "20px" }}>
             <FormGroup>

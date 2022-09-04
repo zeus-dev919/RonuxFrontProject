@@ -78,6 +78,7 @@ export default function UserConsole() {
     setTableHeader(["Name", "Types", "Email", "Days remaining before deletion", "Operator"]);
     setRows(deletedData);
     setClear(true);
+    setAnchorEl(null);
   }
   const clearClick = () => {
     setClear(false);

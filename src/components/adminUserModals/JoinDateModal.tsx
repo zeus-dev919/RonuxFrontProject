@@ -8,7 +8,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { CustomModal } from "../../commonStyle/CommonStyle";
 export default function JoinDateModal(props: any) {
   return (
-    <CustomModal name="Join date">
+    <CustomModal name="Join date" onClose={props.onClose}>
       <DialogContent style={{ marginTop: "20px" }}>
         <DialogContentText style={{ marginTop: "20px" }} >
           <TextField label="Start date" defaultValue="2020-01-01" InputProps={{ endAdornment: <InputAdornment position="start"><CalendarMonthIcon /></InputAdornment>, }}>

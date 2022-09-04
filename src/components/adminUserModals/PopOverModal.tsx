@@ -25,6 +25,34 @@ export default function PopOverModal(props: any) {
     setFirstNameOpen(true);
     handleClose();
   }
+  const lastNameClick = () => {
+    setFirstNameOpen(true);
+    handleClose();
+  }
+  const userNameClick = () => {
+    setFirstNameOpen(true);
+    handleClose();
+  }
+  const userTypeClick = () => {
+    setFirstNameOpen(true);
+    handleClose();
+  }
+  const userEmailClick = () => {
+    setFirstNameOpen(true);
+    handleClose();
+  }
+  const accountStatusClick = () => {
+    setFirstNameOpen(true);
+    handleClose();
+  }
+  const joinDateClick = () => {
+    setFirstNameOpen(true);
+    handleClose();
+  }
+  const lastSignInClick = () => {
+    setFirstNameOpen(true);
+    handleClose();
+  }
 
   return (
     <Box>
@@ -42,14 +70,13 @@ export default function PopOverModal(props: any) {
         }}
       >
         <MenuItem onClick={() => firstNameClick()}>First name</MenuItem>
-        <MenuItem onClick={() => setLastNameOpen(true)}>Last name</MenuItem>
-        <MenuItem onClick={() => setUserNameOpen(true)}>First name</MenuItem>
-        <MenuItem onClick={() => setUserTypeOpen(true)}>First name</MenuItem>
-        <MenuItem onClick={() => setUserEmailOpen(true)}>First name</MenuItem>
-        <MenuItem onClick={() => setAccountStatusOpen(true)}>First name</MenuItem>
-        <MenuItem onClick={() => setJoinDateOpen(true)}>First name</MenuItem>
-        <MenuItem onClick={() => setLastSignInOpen(true)}>First name</MenuItem>
-
+        <MenuItem onClick={() => lastNameClick()}>Last name</MenuItem>
+        <MenuItem onClick={() => userNameClick()}>Username</MenuItem>
+        <MenuItem onClick={() => userTypeClick()}>User types</MenuItem>
+        <MenuItem onClick={() => userEmailClick()}>User email</MenuItem>
+        <MenuItem onClick={() => accountStatusClick()}>Account status</MenuItem>
+        <MenuItem onClick={() => joinDateClick()}>Join date</MenuItem>
+        <MenuItem onClick={() => lastSignInClick()}>Last sign in time</MenuItem>
         <MenuItem onClick={deletedUserClick}>Recently deleted users</MenuItem>
       </Popover>
       {
@@ -58,31 +85,31 @@ export default function PopOverModal(props: any) {
       }
       {
         lastNameOpen && (
-          <LastNameModal />)
+          <LastNameModal onClose={() => setLastNameOpen(false)} />)
       }
       {
         userNameOpen && (
-          <UserNameModal />)
+          <UserNameModal onClose={() => setUserNameOpen(false)} />)
       }
       {
         userTypeOpen && (
-          <UserTypesModal />)
+          <UserTypesModal onClose={() => setUserTypeOpen(false)} />)
       }
       {
         userEmailOpen && (
-          <UserEmailModal />)
+          <UserEmailModal onClose={() => setUserEmailOpen(false)} />)
       }
       {
         accountStatusOpen && (
-          <AccountStatusModal />)
+          <AccountStatusModal onClose={() => setAccountStatusOpen(false)} />)
       }
       {
         joinDateOpen && (
-          <JoinDateModal />)
+          <JoinDateModal onClose={() => setJoinDateOpen(false)} />)
       }
       {
         lastSignInOpen && (
-          <LastSignInModal />)
+          <LastSignInModal onClose={() => setLastSignInOpen(false)} />)
       }
     </Box>
 

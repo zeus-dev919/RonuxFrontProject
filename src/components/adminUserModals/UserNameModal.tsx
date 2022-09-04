@@ -5,11 +5,11 @@ import {
   TextField
 } from "@mui/material";
 import { CustomModal } from "../../commonStyle/CommonStyle";
-export default function UserNameModal() {
+export default function UserNameModal(props: any) {
 
   return (
     <div>
-      <CustomModal name="Username">
+      <CustomModal name="Username" onClose={props.onClose}>
         <DialogContent style={{ marginTop: "20px", width: 'fit-content' }}>
           <DialogContentText style={{ marginTop: "20px" }} >
             <TextField label="Include" defaultValue="usertcqq"></TextField>
