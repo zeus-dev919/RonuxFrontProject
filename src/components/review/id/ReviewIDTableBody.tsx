@@ -8,7 +8,7 @@ import {
   Avatar,
   Button
 } from "@mui/material";
-import { MuiChip } from "../../commonStyle/CommonStyle";
+import { MuiChip } from "../../../commonStyle/CommonStyle";
 
 export type reviewIDDataType = {
   name: string,

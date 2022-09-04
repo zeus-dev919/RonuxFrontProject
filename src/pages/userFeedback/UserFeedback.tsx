@@ -17,7 +17,7 @@ import { TableBox } from "../../commonStyle/CommonStyle";
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
 import PopOverModal from "../../components/activity/admin/PopOverModal";
 import { CustomTableHeadWithOneActions } from "../../commonStyle/CommonStyle";
-import ReviewIDTableBody from "../../components/reviewID/ReviewIDTableBody";
+import ReviewIDTableBody from "../../components/review/id/ReviewIDTableBody";
 //Reac API data here
 const data = [{
   name: 'Perry Lance',

@@ -17,7 +17,7 @@ import { TableBox } from "../../commonStyle/CommonStyle";
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
 import PopOverModal from "../../components/activity/admin/PopOverModal";
 import { CustomTableHeadWithTwoActions } from "../../commonStyle/CommonStyle";
-import ReviewFreelancersTableBody from "../../components/reviewFreelancers/ReviewFreelancersTableBody";
+import ReviewFreelancersTableBody from "../../components/review/freelancers/ReviewFreelancersTableBody";
 
 //Reac API data here
 const data = [{
