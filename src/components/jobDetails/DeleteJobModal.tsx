@@ -8,7 +8,8 @@ import {
   DialogContentText,
   DialogTitle,
   Box,
-  TextField
+  TextField,
+  Button
 } from "@mui/material";
 import { DecideButton } from "../../commonStyle/CommonStyle";
 
@@ -18,7 +19,12 @@ const MuiChip = styled(Chip)(({ theme }) => ({
   },
   color: "blue",
 }));
-
+const CreateRoleButton = styled(Button)({
+  borderRadius: 20,
+  marginLeft: 20,
+  marginTop: 40,
+  textTransform: "none",
+});
 
 export default function DeleteJobModal(props: any) {
   const [open, setOpen] = React.useState(false);
@@ -41,6 +47,8 @@ export default function DeleteJobModal(props: any) {
         <MuiChip label="Delete job" />
       </Box>
       <Dialog
+        maxWidth='xs'
+        style={{ width: '100%' }}
         open={open}
         onClose={handleClose}
       >
@@ -50,17 +58,17 @@ export default function DeleteJobModal(props: any) {
           Delete job
         </DialogTitle>
         <DialogContent style={{ marginTop: "20px" }}>
-          <DialogContentText style={{ marginTop: "20px" }} >
+          <DialogContentText  >
             Sure you want to delete this job?
           </DialogContentText>
           <DialogContentText style={{ marginTop: "20px" }} >
-            <TextField label="Unblock Reason" defaultValue="Operation error" sx={{ m: 1, width: '60ch' }}></TextField>
+            <TextField fullWidth label="Unblock Reason" defaultValue="Operation error" ></TextField>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <DecideButton onClick={handleClose} autoFocus>
+          <CreateRoleButton onClick={handleClose} autoFocus>
             Cancel
-          </DecideButton>
+          </CreateRoleButton>
           <DecideButton onClick={unblockClick} autoFocus>
             Delete
           </DecideButton>

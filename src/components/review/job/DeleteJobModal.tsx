@@ -8,18 +8,21 @@ import {
   DialogContentText,
   DialogTitle,
   Box,
+  TextField,
 } from "@mui/material";
-import { DecideButton } from "../../commonStyle/CommonStyle";
+import { DecideButton } from "../../../commonStyle/CommonStyle";
 
 const MuiChip = styled(Chip)(({ theme }) => ({
   "&:hover": {
     background: "#ccccff",
   },
   color: "blue",
+  background: 'white',
+  marginRight: '10px'
 }));
 
 
-export default function MarkModal(props: any) {
+export default function DeleteJobModal(props: any) {
   const [open, setOpen] = React.useState(false);
 
   //handle functions
@@ -37,7 +40,7 @@ export default function MarkModal(props: any) {
   return (
     <Box>
       <Box onClick={handleClickOpen}>
-        <MuiChip label="Mark as reviewed" />
+        <MuiChip variant="outlined" label='Delete job' />
       </Box>
       <Dialog
         maxWidth='xs'
@@ -48,11 +51,14 @@ export default function MarkModal(props: any) {
         <DialogTitle
           className='dialog-title'
         >
-          Mark as reviewed
+          Delete job
         </DialogTitle>
         <DialogContent style={{ marginTop: "20px" }}>
-          <DialogContentText >
-            Sure you want to make this job as reviewed?
+          <DialogContentText  >
+            Sure you want to delete this job?
+          </DialogContentText>
+          <DialogContentText style={{ marginTop: "20px" }} >
+            <TextField fullWidth label="Unblock Reason" defaultValue="Operation error" ></TextField>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -60,7 +66,7 @@ export default function MarkModal(props: any) {
             Cancel
           </DecideButton>
           <DecideButton onClick={unblockClick} autoFocus>
-            Confirm
+            Delete
           </DecideButton>
         </DialogActions>
       </Dialog>

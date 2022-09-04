@@ -5,9 +5,9 @@ import MarkModal from "./MarkModal";
 
 export default function JobDescription() {
   return (
-    <Paper style={{ marginBottom: '20px', border: '1px solid #cccccc' }}>
+    <Paper variant="outlined" style={{ marginTop: '10px', marginBottom: '20px' }}>
       <Box padding='20px'>
-        <Typography>
+        <Typography>11
           <span>Job ID:</span>
           <span>0123456789</span>
         </Typography>

@@ -34,11 +34,28 @@ export default function FilterConditions() {
         </FormGroup>
       </Box>
       <Box>
-        <Typography style={{ marginTop: '20px', fontSize: '20px', marginBottom: '15px' }}>Submit time</Typography>
+        <Typography style={{ marginTop: '20px', fontSize: '20px', marginBottom: '15px' }}>Review time</Typography>
         <TextField style={{ marginBottom: '10px' }} placeholder="Start date" InputProps={{ endAdornment: <InputAdornment position="start"><CalendarMonthIcon /></InputAdornment>, }}>
         </TextField>
         <TextField style={{ marginBottom: '10px' }} placeholder="End date" InputProps={{ endAdornment: <InputAdornment position="start"><CalendarMonthIcon /></InputAdornment>, }}>
         </TextField>
+      </Box>
+      <Box>
+        <Typography style={{ marginTop: '20px', fontSize: '20px', marginBottom: '15px' }}>Post time</Typography>
+        <TextField style={{ marginBottom: '10px' }} placeholder="Start date" InputProps={{ endAdornment: <InputAdornment position="start"><CalendarMonthIcon /></InputAdornment>, }}>
+        </TextField>
+        <TextField style={{ marginBottom: '10px' }} placeholder="End date" InputProps={{ endAdornment: <InputAdornment position="start"><CalendarMonthIcon /></InputAdornment>, }}>
+        </TextField>
+      </Box>
+      <Box>
+        <Typography style={{ marginTop: '20px', fontSize: '20px', marginBottom: '15px' }}>Recently deleted jobs</Typography>
+        <FormGroup>
+          <FormControlLabel
+            control={<Checkbox />}
+            label="Show"
+          />
+
+        </FormGroup>
       </Box>
     </Box>
   )

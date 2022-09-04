@@ -18,7 +18,7 @@ export type adminUserDataType = {
 export default function BlockedKeywordTableBody(props: any) {
   const rows: Array<adminUserDataType> = props.rows;
   return (
-    <TableBody>
+    <TableBody  >
       {rows.map((row, index) => (
         <TableRow key={index} hover={true} className="row-hover">
           <TableCell style={{ width: '20%' }} component="th" scope="row">

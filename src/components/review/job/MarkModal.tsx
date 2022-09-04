@@ -9,13 +9,15 @@ import {
   DialogTitle,
   Box,
 } from "@mui/material";
-import { DecideButton } from "../../commonStyle/CommonStyle";
+import { DecideButton } from "../../../commonStyle/CommonStyle";
 
 const MuiChip = styled(Chip)(({ theme }) => ({
   "&:hover": {
     background: "#ccccff",
   },
   color: "blue",
+  background: 'white',
+
 }));
 
 
@@ -37,7 +39,7 @@ export default function MarkModal(props: any) {
   return (
     <Box>
       <Box onClick={handleClickOpen}>
-        <MuiChip label="Mark as reviewed" />
+        <MuiChip variant="outlined" label="Mark as reviewed" />
       </Box>
       <Dialog
         maxWidth='xs'
