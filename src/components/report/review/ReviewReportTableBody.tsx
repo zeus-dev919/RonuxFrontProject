@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { MuiChip } from "../../../commonStyle/CommonStyle";
 import ViewResultModal from "./ViewResultModal";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -23,6 +24,7 @@ export type reviewReportDataType = {
 }
 
 export default function ReviewReportTableBody(props: any) {
+  let navigate = useNavigate();
   const rows: Array<reviewReportDataType> = props.rows;
   return (
     <TableBody>
@@ -52,7 +54,7 @@ export default function ReviewReportTableBody(props: any) {
           </TableCell>
           <TableCell align="right">
             <Box className="hidden">
-              <MuiChip label="View report content" />
+              <MuiChip onClick={() => navigate(`/reports/${row.name}`)} label="View report content" />
             </Box>
           </TableCell>
         </TableRow>
