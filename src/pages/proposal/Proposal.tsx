@@ -1,8 +1,8 @@
 import { Divider, ListItem, Typography, Box, Grid } from '@mui/material';
 import React from 'react';
-import FilterConditions from '../../components/review/job/FilterConditions';
-import JobSearch from '../../components/review/job/JobSearch';
-import JobDescription from '../../components/review/jobDetails/JobDescription';
+import FilterConditions from '../../components/proposal/jobproposal/FilterConditions';
+import JobSearch from '../../components/proposal/jobproposal/JobSearch';
+import Description from '../../components/proposal/jobproposal/Description';
 
 export default function Proposal() {
   return (
@@ -18,7 +18,7 @@ export default function Proposal() {
             <FilterConditions />
           </Grid>
           <Grid item xs={9}>
-            <JobDescription />
+            <Description />
           </Grid>
 
         </Grid>
