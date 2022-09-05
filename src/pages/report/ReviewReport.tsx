@@ -15,7 +15,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { TableBox } from "../../commonStyle/CommonStyle";
 
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
-import PopOverModal from "../../components/activity/admin/PopOverModal";
+import PopOverModal from "../../components/report/review/PopOverModal";
 import { CustomTableHeadWithTwoActions } from "../../commonStyle/CommonStyle";
 import ReviewReportTableBody from "../../components/report/review/ReviewReportTableBody";
 //Reac API data here

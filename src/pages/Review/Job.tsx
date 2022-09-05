@@ -22,7 +22,6 @@ export default function Job() {
             {data.map((item) => {
               return (
                 <Description idx={item} />
-
               )
             })}
           </Grid>
