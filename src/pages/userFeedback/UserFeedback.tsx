@@ -41,7 +41,7 @@ const data = [{
 
 
 export default function UserFeedback() {
-  const tableHeader = ["Name", "Review status", "Administrator", "Application time", "Review time"];
+  const tableHeader = ["Name", "User type", "Device name", "System", "Version", "Feedback time "];
   const rows = data;
   const [anchorEl, setAnchorEl] = React.useState<HTMLDivElement | null>(null);
   const open = Boolean(anchorEl);
@@ -56,14 +56,14 @@ export default function UserFeedback() {
   return (
     <>
       <ListItem>
-        <Typography ml={1}> Review identity verification </Typography>
+        <Typography ml={1}> User feedback </Typography>
       </ListItem>
       <Divider />
       <TableBox>
         <Box className="user-admin-console-container">
           <Toolbar className="user-admin-console-toolbar">
             <Typography className="user-admin-console-typography">
-              Currently showing all review identitiy verification
+              Currently showing all user feedback
             </Typography>
           </Toolbar>
           <Box className="admin-user-console-choose">
