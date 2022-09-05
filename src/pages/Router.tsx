@@ -28,6 +28,7 @@ import Help from "./Help";
 import Blog from "./Blog";
 import MediationCenter from "./dispute/MediationCenter";
 import TransactionHistory from "./TransactionHistory";
+import JobDetails from "./Review/JobDetails";
 
 function MainLayout() {
   return (
@@ -111,6 +112,10 @@ export default function Router() {
         {
           path: "/jobs",
           element: <Job />
+        },
+        {
+          path: "/jobs/:job-id",
+          element: <JobDetails />
         },
         {
           path: "/reports",

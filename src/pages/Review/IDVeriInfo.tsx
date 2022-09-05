@@ -1,9 +1,9 @@
 import { Divider, ListItem, Typography, Box } from '@mui/material';
 import React from 'react';
-import JobAttachment from '../../components/jobDetails/JobAttachment';
-import JobBudget from '../../components/jobDetails/JobBudjet';
-import JobDescription from '../../components/jobDetails/JobDescription';
-import JobSkills from '../../components/jobDetails/JobSkills';
+import JobAttachment from '../../components/review/jobDetails/JobAttachment';
+import JobBudget from '../../components/review/jobDetails/JobBudjet';
+import JobDescription from '../../components/review/jobDetails/JobDescription';
+import JobSkills from '../../components/review/jobDetails/JobSkills';
 
 export default function JobDetails() {
   return (

@@ -1,7 +1,7 @@
 import { Divider, ListItem, Typography, Box, Grid } from '@mui/material';
 import React from 'react';
 import JobSearch from '../../components/review/job/JobSearch';
-import JobDescription from '../../components/jobDetails/JobDescription';
+import JobDescription from '../../components/review/jobDetails/JobDescription';
 import Filter from '../../components/jobContract/contract/Filter';
 
 export default function Contract() {

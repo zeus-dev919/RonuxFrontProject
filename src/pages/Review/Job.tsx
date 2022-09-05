@@ -4,6 +4,7 @@ import FilterConditions from '../../components/review/job/FilterConditions';
 import JobSearch from '../../components/review/job/JobSearch';
 import Description from '../../components/review/job/Description';
 
+const data = ['1', '2', '3'];
 export default function Job() {
   return (
     <>
@@ -18,7 +19,12 @@ export default function Job() {
             <FilterConditions />
           </Grid>
           <Grid item xs={9}>
-            <Description />
+            {data.map((item) => {
+              return (
+                <Description idx={item} />
+
+              )
+            })}
           </Grid>
 
         </Grid>

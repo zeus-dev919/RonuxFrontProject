@@ -1,7 +1,7 @@
 import { Paper, Typography, Avatar, Box } from "@mui/material";
 import React from "react";
-import DeleteJobModal from "../../jobDetails/DeleteJobModal";
-import MarkModal from "../../jobDetails/MarkModal";
+import DeleteJobModal from "../jobDetails/DeleteJobModal";
+import MarkModal from "../jobDetails/MarkModal";
 
 export default function IDInformation() {
   return (

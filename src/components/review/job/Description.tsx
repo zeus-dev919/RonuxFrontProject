@@ -1,13 +1,15 @@
 import { Paper, Typography, Avatar, Box, Chip } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { FlexBox } from "../../../commonStyle/CommonStyle";
 import DeleteJobModal from "./DeleteJobModal";
 import MarkModal from "./MarkModal";
 
 const skills = ['Android', 'Java', 'Kotlin'];
-export default function Description() {
+export default function Description(props: any) {
+  let navigate = useNavigate();
   return (
-    <Paper variant="outlined" style={{ marginTop: '10px', marginBottom: '20px' }}>
+    <Paper onClick={() => navigate(`/jobs/${props.idx}`)} variant="outlined" style={{ marginTop: '10px', marginBottom: '20px' }}>
       <Box padding='20px'>
         <Typography mb={2}>
           <span>Job ID:</span>

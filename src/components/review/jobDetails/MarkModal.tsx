@@ -9,7 +9,7 @@ import {
   DialogTitle,
   Box,
 } from "@mui/material";
-import { DecideButton } from "../../commonStyle/CommonStyle";
+import { DecideButton } from "../../../commonStyle/CommonStyle";
 
 const MuiChip = styled(Chip)(({ theme }) => ({
   "&:hover": {
