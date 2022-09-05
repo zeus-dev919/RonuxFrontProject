@@ -8,38 +8,55 @@ import ReviewTimeModal from "./ReviewTimeModal";
 import IDNumberModal from "./IDNumberModal";
 import ReviewStatusModal from "./ReviewStatusModal";
 import ApplicationTimeModal from "./ApplicationTimeModal";
+import UserTypeModal from "./UserTypeModal";
+import ModelModal from "./ModelModal";
+import BrandModal from "./BrandModal";
+import SystemModal from "./SystmModal";
+import VersionModal from "./VersionModal";
+import FeedbackIDModal from "./FeedbackIDModal";
+import FeedbackTimeModal from "./FeedbackTimeModal";
 
 export default function PopOverModal(props: any) {
   const { open, anchorEl, handleClose } = props;
-  const [idNumberOpen, setIdNumberOpen] = React.useState(false);
+  const [modelOpen, setModelOpen] = React.useState(false);
+  const [userTypeOpen, setUserTypeOpen] = React.useState(false);
   const [usernameOpen, setUsernameOpen] = React.useState(false);
-  const [administratorEmailOpen, setAdministratorEmailOpen] = React.useState(false);
-  const [reviewStatusOpen, setReviewStatusOpen] = React.useState(false);
-  const [reviewTimeOpen, setReviewTimeOpen] = React.useState(false);
-  const [appliocationTimeOpen, setApplicationTimeOpen] = React.useState(false);
+  const [brandOpen, setBrandOpen] = React.useState(false);
+  const [systemOpen, setSystemOpen] = React.useState(false);
+  const [versionOpen, setVersionOpen] = React.useState(false);
+  const [feedbackIDOpen, setFeedbackIDOpen] = React.useState(false);
+  const [feedbackTimeOpen, setFeedbackTimeOpen] = React.useState(false);
 
-  const administratorEmailClick = () => {
-    setAdministratorEmailOpen(true);
-    handleClose();
-  }
-  const idNumberClick = () => {
-    setIdNumberOpen(true);
-    handleClose();
-  }
   const usernameClick = () => {
     setUsernameOpen(true);
     handleClose();
   }
-  const reviewStatusClick = () => {
-    setReviewStatusOpen(true);
+  const userTypeClick = () => {
+    setUserTypeOpen(true);
     handleClose();
   }
-  const reviewTimeClick = () => {
-    setReviewTimeOpen(true);
+  const modelClick = () => {
+    setModelOpen(true);
     handleClose();
   }
-  const applicationTimeClick = () => {
-    setReviewTimeOpen(true);
+  const brandClick = () => {
+    setBrandOpen(true);
+    handleClose();
+  }
+  const systemClick = () => {
+    setSystemOpen(true);
+    handleClose();
+  }
+  const versionClick = () => {
+    setVersionOpen(true);
+    handleClose();
+  }
+  const feedbackIDClick = () => {
+    setFeedbackIDOpen(true);
+    handleClose();
+  }
+  const feedbackTimeClick = () => {
+    setFeedbackTimeOpen(true);
     handleClose();
   }
   return (
@@ -58,11 +75,13 @@ export default function PopOverModal(props: any) {
         }}
       >
         <MenuItem onClick={() => usernameClick()}>Username</MenuItem>
-        <MenuItem onClick={() => administratorEmailClick()}>Administrator email</MenuItem>
-        <MenuItem onClick={() => idNumberClick()}>ID number</MenuItem>
-        <MenuItem onClick={() => reviewStatusClick()}>Review status</MenuItem>
-        <MenuItem onClick={() => reviewTimeClick()}>Review time</MenuItem>
-        <MenuItem onClick={() => applicationTimeClick()}>Application Time</MenuItem>
+        <MenuItem onClick={() => userTypeClick()}>User type</MenuItem>
+        <MenuItem onClick={() => modelClick()}>Model</MenuItem>
+        <MenuItem onClick={() => brandClick()}>Brand</MenuItem>
+        <MenuItem onClick={() => systemClick()}>System</MenuItem>
+        <MenuItem onClick={() => versionClick()}>Version</MenuItem>
+        <MenuItem onClick={() => feedbackIDClick()}>Feedback ID</MenuItem>
+        <MenuItem onClick={() => feedbackTimeClick()}>Feedback time</MenuItem>
       </Popover>
 
       {
@@ -70,24 +89,32 @@ export default function PopOverModal(props: any) {
           <UserNameModal onClose={() => setUsernameOpen(false)} />)
       }
       {
-        administratorEmailOpen && (
-          <AdministratorEmailModal onClose={() => setAdministratorEmailOpen(false)} />)
+        userTypeOpen && (
+          <UserTypeModal onClose={() => setUserTypeOpen(false)} />)
       }
       {
-        idNumberOpen && (
-          <IDNumberModal onClose={() => setIdNumberOpen(false)} />)
+        modelOpen && (
+          <ModelModal onClose={() => setModelOpen(false)} />)
       }
       {
-        reviewStatusOpen && (
-          <ReviewStatusModal onClose={() => setReviewStatusOpen(false)} />)
+        brandOpen && (
+          <BrandModal onClose={() => setBrandOpen(false)} />)
       }
       {
-        reviewTimeOpen && (
-          <ReviewTimeModal onClose={() => setReviewTimeOpen(false)} />)
+        systemOpen && (
+          <SystemModal onClose={() => setSystemOpen(false)} />)
       }
       {
-        appliocationTimeOpen && (
-          <ApplicationTimeModal onClose={() => setApplicationTimeOpen(false)} />)
+        versionOpen && (
+          <VersionModal onClose={() => setVersionOpen(false)} />)
+      }
+      {
+        feedbackIDOpen && (
+          <FeedbackIDModal onClose={() => setFeedbackIDOpen(false)} />)
+      }
+      {
+        feedbackTimeOpen && (
+          <FeedbackTimeModal onClose={() => setFeedbackTimeOpen(false)} />)
       }
     </Box>
 
