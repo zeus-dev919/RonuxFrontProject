@@ -9,6 +9,7 @@ import {
   Button
 } from "@mui/material";
 import { MuiChip } from "../../../commonStyle/CommonStyle";
+import ViewResultModal from "./ViewResultModal";
 
 
 
@@ -46,7 +47,7 @@ export default function ReviewReportTableBody(props: any) {
 
           <TableCell align="right">
             <Box className="hidden">
-              <MuiChip label="View review result" />
+              <ViewResultModal />
             </Box>
           </TableCell>
           <TableCell align="right">
