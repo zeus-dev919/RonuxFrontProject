@@ -11,14 +11,15 @@ import {
     Box
 } from "@mui/material";
 import { BlueButton } from '../../commonStyle/CommonStyle';
-
+import { useNavigate } from 'react-router-dom';
 export default function AccountPaper() {
+    let navigate = useNavigate();
     return (
-        <Paper sx={{ padding: '10px' }} variant='outlined'>
+        <Paper sx={{ padding: '10px', marginRight: '10px' }} variant='outlined'>
             <Typography>Account Balance</Typography>
             <Typography>Available balance(CNY)</Typography>
             <Typography>100</Typography>
-            <BlueButton>View transaction history</BlueButton>
+            <BlueButton onClick={() => navigate('/transactions')}>View transaction history</BlueButton>
         </Paper>
     )
 }

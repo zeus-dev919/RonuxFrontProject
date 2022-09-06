@@ -97,7 +97,7 @@ const data = [
     url: "/transactions",
   },
   { title: "Money manage", details: "Manage account moneys", url: "/moneys" },
-  { title: "Data analysis", details: "View data analysis", url: "/admins" },
+  { title: "Data analysis", details: "View data analysis", url: "/analytics" },
 ];
 
 export default function RonuxAdmin() {

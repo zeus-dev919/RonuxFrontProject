@@ -31,6 +31,7 @@ import TransactionHistory from "./TransactionHistory";
 import JobDetails from "./Review/JobDetails";
 import ReportedJob from "./report/ReportedJob";
 import MoneyManage from "./MoneyManage";
+import DataAnalysis from "./DataAnalysis";
 
 function MainLayout() {
   return (
@@ -166,6 +167,10 @@ export default function Router() {
         {
           path: "/moneys",
           element: <MoneyManage />
+        },
+        {
+          path: "/analytics",
+          element: <DataAnalysis />
         },
       ],
     },

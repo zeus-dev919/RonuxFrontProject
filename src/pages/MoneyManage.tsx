@@ -23,7 +23,14 @@ export default function MoneyManage() {
 					<CheckboxList />
 				</Grid>
 				<Grid item xs={10}>
-					<AccountPaper />
+					<Grid mt={7} container>
+						<Grid item xs={12} lg={3}>
+							<AccountPaper />
+						</Grid>
+						<Grid item xs={12} lg={9}>
+							<AccountPaper />
+						</Grid>
+					</Grid>
 				</Grid>
 			</Grid>
 		</>
