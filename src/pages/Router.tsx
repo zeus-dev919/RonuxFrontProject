@@ -30,6 +30,7 @@ import MediationCenter from "./dispute/MediationCenter";
 import TransactionHistory from "./TransactionHistory";
 import JobDetails from "./Review/JobDetails";
 import ReportedJob from "./report/ReportedJob";
+import MoneyManage from "./MoneyManage";
 
 function MainLayout() {
   return (
@@ -161,6 +162,10 @@ export default function Router() {
         {
           path: "/transactions",
           element: <TransactionHistory />
+        },
+        {
+          path: "/moneys",
+          element: <MoneyManage />
         },
       ],
     },

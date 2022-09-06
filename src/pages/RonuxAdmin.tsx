@@ -96,7 +96,7 @@ const data = [
     details: "Manage transaction histories",
     url: "/transactions",
   },
-  { title: "Money manage", details: "Manage account moneys", url: "/admins" },
+  { title: "Money manage", details: "Manage account moneys", url: "/moneys" },
   { title: "Data analysis", details: "View data analysis", url: "/admins" },
 ];
 
