@@ -43,6 +43,8 @@ export default function SignIn() {
       axios.post(`https://admin.rounx.com:10000/admin/v1/sign-in`, {
         email: formik.values.email,
         password: formik.values.password,
+      }, {
+        headers: { "Accept": "application/json, text/plain, /", "Content-Type": "multipart/form-data", "language": 'en' }
       }).then((res) => console.log('ok'));
       //navigate("/");
     },
@@ -58,80 +60,82 @@ export default function SignIn() {
 
   return (
     <FormBox>
-      <CustomForm onSubmit={formik.handleSubmit}>
-        <img
-          src="logo.png"
-          alt="Rounx admin"
-          width="90px"
-          height="90px"
-          style={{ color: "#336def", alignSelf: "center" }}
-        />
-        <Typography
-          style={{
-            fontSize: "20px",
-            textAlign: "center",
-            marginTop: "-10px",
-            marginBottom: "20px",
-          }}
-        >
-          <span>Sign in </span>
-          <span style={{ fontWeight: "bold" }}>Rounx Admin</span>
-        </Typography>
-        <TextField
-          fullWidth
-          id="email"
-          name="email"
-          label="Email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
-        />
-        <FormControl>
+      <Box width='500px'>
+        <CustomForm onSubmit={formik.handleSubmit}>
+          <img
+            src="logo.png"
+            alt="Rounx admin"
+            width="90px"
+            height="90px"
+            style={{ color: "#336def", alignSelf: "center" }}
+          />
+          <Typography
+            style={{
+              fontSize: "20px",
+              textAlign: "center",
+              marginTop: "-10px",
+              marginBottom: "20px",
+            }}
+          >
+            <span>Sign in </span>
+            <span style={{ fontWeight: "bold" }}>Rounx Admin</span>
+          </Typography>
           <TextField
             fullWidth
-            id="password"
-            name="password"
-            label="Password"
-            type={showPassword ? "text" : "password"}
-            value={formik.values.password}
+            id="email"
+            name="email"
+            label="Email"
+            value={formik.values.email}
             onChange={formik.handleChange}
-            helperText={formik.touched.password && formik.errors.password}
-            error={formik.touched.password && Boolean(formik.errors.password)}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
           />
+          <FormControl>
+            <TextField
+              fullWidth
+              id="password"
+              name="password"
+              label="Password"
+              type={showPassword ? "text" : "password"}
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              helperText={formik.touched.password && formik.errors.password}
+              error={formik.touched.password && Boolean(formik.errors.password)}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </FormControl>
+          <Box style={{ margin: "10px 0px" }}>
+            <Button
+              className="normal-text round-button"
+              variant="outlined"
+              onClick={() => navigate("/forgot-password")}
+            >
+              Forgot password?
+            </Button>
+            <BlueButton type="submit" style={{ float: "right" }}>
+              Sign in
+            </BlueButton>
+          </Box>
+        </CustomForm>
+        <FormControl sx={{ minWidth: "180px" }}>
+          <Select defaultValue="English" value={language} onChange={handleChange}>
+            <MenuItem value="English">English</MenuItem>
+            <MenuItem value="Chinese">Chinese</MenuItem>
+          </Select>
         </FormControl>
-        <Box style={{ margin: "10px 0px" }}>
-          <Button
-            className="normal-text round-button"
-            variant="outlined"
-            onClick={() => navigate("/forgot-password")}
-          >
-            Forgot password?
-          </Button>
-          <BlueButton type="submit" style={{ float: "right" }}>
-            Sign in
-          </BlueButton>
-        </Box>
-      </CustomForm>
-      <FormControl sx={{ minWidth: "180px" }}>
-        <Select defaultValue="English" value={language} onChange={handleChange}>
-          <MenuItem value="English">English</MenuItem>
-          <MenuItem value="Chinese">Chinese</MenuItem>
-        </Select>
-      </FormControl>
+      </Box>
     </FormBox>
   );
 }

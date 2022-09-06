@@ -47,10 +47,11 @@ export const CustomForm = styled("form")({
 });
 
 export const FormBox = styled(Box)({
-  width: "25%",
-  marginLeft: "37%",
-  alignContent: "center",
-  marginTop: "10%",
+  display: 'flex',
+  justifyContent: 'center',
+  height: '100vh',
+  alignItems: 'center'
+
 });
 
 export const FlexBox = styled(Box)({
