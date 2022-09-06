@@ -17,26 +17,15 @@ import { TableBox } from "../../commonStyle/CommonStyle";
 import AdminUserPagination from "../../components/adminUserModals/AdminUserPagination";
 import PopOverModal from "../../components/userFeedback/feedback/PopOverModal";
 import { CustomTableHeadWithOneActions } from "../../commonStyle/CommonStyle";
-import ReviewIDTableBody from "../../components/review/id/ReviewIDTableBody";
+import UserFeedbackTableBody from "../../components/userFeedback/feedback/UserFeedbackTableBody";
 //Reac API data here
 const data = [{
   name: 'Perry Lance',
-  status: 'Pending review',
-  admin: 'Perry Lance',
-  applicationTime: '2022-03-10',
-  reviewTime: '2022-03-11'
-}, {
-  name: 'Perry Lance',
-  status: 'Pending review',
-  admin: 'Perry Lance',
-  applicationTime: '2022-03-10',
-  reviewTime: '2022-03-11'
-}, {
-  name: 'Perry Lance',
-  status: 'Pending review',
-  admin: 'Perry Lance',
-  applicationTime: '2022-03-10',
-  reviewTime: '2022-03-11'
+  type: 'Freelancer',
+  deviceName: 'Google pixel XL',
+  system: 'Android5.0',
+  version: '1.0',
+  feedbackTime: '2022-03-10',
 },]
 
 
@@ -76,7 +65,7 @@ export default function UserFeedback() {
           <TableContainer component={Paper}>
             <Table>
               <CustomTableHeadWithOneActions name={tableHeader} />
-              <ReviewIDTableBody rows={rows} />
+              <UserFeedbackTableBody rows={rows} />
               <TableFooter>
                 <AdminUserPagination rows={rows} />
               </TableFooter>

@@ -12,10 +12,12 @@ import { MuiChip } from "../../../commonStyle/CommonStyle";
 
 export type reviewIDDataType = {
   name: string,
-  status: string,
-  admin: string,
-  applicationTime: string,
-  reviewTime: string
+  type: string,
+  deviceName: string,
+  system: string,
+  version: string
+  feedbackTime: string
+
 }
 
 export default function UserFeedbackTableBody(props: any) {
@@ -24,7 +26,7 @@ export default function UserFeedbackTableBody(props: any) {
     <TableBody>
       {rows.map((row, index) => (
         <TableRow key={index} hover={true} className="row-hover">
-          <TableCell style={{ width: '17%' }} component="th" scope="row">
+          <TableCell style={{ width: '15%' }} component="th" scope="row">
             <Stack direction="row" spacing={0}>
               <Avatar />
               <Button
@@ -35,13 +37,14 @@ export default function UserFeedbackTableBody(props: any) {
               </Button>
             </Stack>
           </TableCell>
-          <TableCell style={{ width: '17%' }}>{row.status}</TableCell>
-          <TableCell style={{ width: '17%' }}>{row.admin}</TableCell>
-          <TableCell style={{ width: '17%' }}>{row.applicationTime}</TableCell>
-          <TableCell style={{ width: '17%' }}>{row.reviewTime}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.type}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.deviceName}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.system}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.version}</TableCell>
+          <TableCell style={{ width: '15%' }}>{row.feedbackTime}</TableCell>
           <TableCell align="right">
             <Box className="hidden">
-              <MuiChip label="View identity verification" />
+              <MuiChip label="View feedback" />
             </Box>
           </TableCell>
         </TableRow>
