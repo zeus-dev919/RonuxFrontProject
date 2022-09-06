@@ -30,14 +30,14 @@ export default function Help() {
   return (
     <>
       <ListItem>
-        <Typography ml={1}> Administrator </Typography>
+        <Typography ml={1}> Help doc </Typography>
       </ListItem>
       <Divider />
       <Grid container>
         <Grid item xs={2}>
           <CustomPaper variant="outlined">
             <CreateRoleButton variant="outlined" onClick={() => setOpen(true)}>
-              Create a new role
+              Create help doc
             </CreateRoleButton>
             <br />
             <CheckboxList />

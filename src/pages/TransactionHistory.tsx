@@ -1,69 +1,36 @@
+
 import * as React from "react";
 import {
   Table,
   TableContainer,
   TableFooter,
   Paper,
-  Divider,
-  Toolbar,
-  ListItem,
   Typography,
-  Box
+  Toolbar,
+  Box,
+  Divider,
+  ListItem
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import { TableBox } from "../commonStyle/CommonStyle";
 
-import AdminUserTableBody from "../components/adminUserModals/AdminUserTableBody";
 import AdminUserPagination from "../components/adminUserModals/AdminUserPagination";
-import PopOverModal from "../components/adminUserModals/PopOverModal";
-import { CustomTableHeadWithTwoActions } from "../commonStyle/CommonStyle";
-
+import PopOverModal from "../components/userFeedback/feedback/PopOverModal";
+import { CustomTableHeadWithOneActions } from "../commonStyle/CommonStyle";
+import TransactionHistoryTableBody from "../components/transactionHistory/TransactionHistoryTableBody";
 //Reac API data here
 const data = [{
   name: 'Perry Lance',
-  type: 'Freelancer',
-  status: 'Active',
-  sign: '2022-03-10',
-  email: 'usertcqq@gmail.com'
-}, {
-  name: 'Akira Suzuki',
-  type: 'Freelancer',
-  status: 'Active',
-  sign: '2022-03-10',
-  email: 'usertcqq@gmail.com'
-}, {
-  name: 'Perry Lance',
-  type: 'Freelancer',
-  status: 'Active',
-  sign: '2022-03-10',
-  email: 'usertcqq@gmail.com'
-}, {
-  name: 'Perry Lance',
-  type: 'Freelancer',
-  status: 'Active',
-  sign: '2021-03-10',
-  email: 'usertcqq@gmail.com'
-}]
-
-const deletedData = [{
-  name: 'Perry Lance',
-  type: 'Freelancer',
-  status: 'Active',
-  sign: '2022-03-10',
-  email: 'usertcqq@gmail.com'
-}, {
-  name: 'Akira Suzuki',
-  type: 'Freelancer',
-  status: 'Active',
-  sign: '2022-03-10',
-  email: 'usertcqq@gmail.com'
-}];
+  status: 'Freelancer',
+  amount: 'Google pixel XL',
+  time: 'Android5.0',
+  id: '1.0',
+},]
 
 
 export default function TransactionHistory() {
-  const [header, setHeader] = React.useState("Currently showing all users");
-  const [tableHeader, setTableHeader] = React.useState(["Name", "Types", "Status", "Last sign in time", "User email"]);
-  const [rows, setRows] = React.useState(data);
-  const [clear, setClear] = React.useState(false);
+  const tableHeader = ["Name", "Transaction status", "Transaction amount", "Transaction time", "Transaction ID"];
+  const rows = data;
   const [anchorEl, setAnchorEl] = React.useState<HTMLDivElement | null>(null);
   const open = Boolean(anchorEl);
   //handle event
@@ -73,29 +40,18 @@ export default function TransactionHistory() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const deletedUserClick = () => {
-    setHeader("Currently showing deleted users");
-    setTableHeader(["Name", "Types", "Email", "Days remaining before deletion", "Operator"]);
-    setRows(deletedData);
-    setClear(true);
-  }
-  const clearClick = () => {
-    setClear(false);
-    setHeader("Currently showing all users");
-    setTableHeader(["Name", "Types", "Status", "Last sign in time", "User email"]);
-    setRows(data);
-  }
+
   return (
     <>
       <ListItem>
-        <Typography> User </Typography>
+        <Typography ml={1}> Transaction History </Typography>
       </ListItem>
       <Divider />
-      <Box style={{ marginLeft: '7%', marginRight: '7%', marginTop: '4%', justifyContent: 'center' }}>
+      <TableBox>
         <Box className="user-admin-console-container">
           <Toolbar className="user-admin-console-toolbar">
             <Typography className="user-admin-console-typography">
-              {header}
+              Currently showing all transaction histories
             </Typography>
           </Toolbar>
           <Box className="admin-user-console-choose">
@@ -103,23 +59,19 @@ export default function TransactionHistory() {
               <AddIcon />
               Add filters
             </Box>
-            {clear && <Box onClick={clearClick} className="user-admin-console-clear-filters">Clear filters</Box>}
           </Box>
-          <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} deletedUserClick={deletedUserClick} />
+          <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} />
           <TableContainer component={Paper}>
             <Table>
-              <CustomTableHeadWithTwoActions name={tableHeader} />
-              <AdminUserTableBody rows={rows} />
+              <CustomTableHeadWithOneActions name={tableHeader} />
+              <TransactionHistoryTableBody rows={rows} />
               <TableFooter>
                 <AdminUserPagination rows={rows} />
               </TableFooter>
             </Table>
           </TableContainer>
         </Box>
-      </Box>
+      </TableBox>
     </>
   )
 }
-
-
-
