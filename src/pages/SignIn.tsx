@@ -40,16 +40,15 @@ export default function SignIn() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      axios.post(`https://admin.rounx.com:10000/admin/v1/sign-in`, {
-        email: 'admin@rounx.com',
-        password: 'abcd@1234'
+      axios.post(`https://admin.rounx.com/admin/v1/sign-in`, {
+        email: values.email,
+        password: values.password
       }, {
         headers: {
-          'Accept': 'application/json',
           "Content-Type": "application/json",
           "Accept-Language": 'en'
         }
-      }).then((response) => console.log(response))
+      }).then(() => navigate("/"))
         .catch((error) => console.log(error));
       //navigate("/");
     },

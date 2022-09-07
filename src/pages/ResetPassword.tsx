@@ -10,10 +10,12 @@ import {
   MenuItem,
   InputAdornment,
   IconButton,
+  Box
 } from "@mui/material";
 import { BlueButton, CustomForm, FormBox } from "./../commonStyle/CommonStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const validationSchema = yup.object({
   password: yup
@@ -41,6 +43,16 @@ export default function ResetPassword() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
+      axios.post(`https://admin.rounx.com/admin/v1/sign-in`, {
+        email: 'admin@rounx.com',
+        password: values.password
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept-Language": 'en'
+        }
+      }).then(() => navigate("/sign-in"))
+        .catch((error) => console.log(error));
       navigate("/sign-in");
     },
   });
@@ -55,71 +67,74 @@ export default function ResetPassword() {
 
   return (
     <FormBox>
-      <CustomForm onSubmit={formik.handleSubmit}>
-        <img
-          src="logo.png"
-          alt="Rounx admin"
-          width="90px"
-          height="90px"
-          style={{ color: "#336def", alignSelf: "center" }}
-        />
-        <Typography
-          style={{
-            fontSize: "20px",
-            textAlign: "center",
-            marginTop: "-10px",
-            marginBottom: "20px",
-          }}
-        >
-          Reset password
-        </Typography>
-        <TextField
-          fullWidth
-          id="password"
-          name="password"
-          label="Set password"
-          type={showPassword ? "text" : "password"}
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          helperText={"At least 8 characters"}
-          error={formik.touched.password && Boolean(formik.errors.password)}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
-        <TextField
-          fullWidth
-          id="confirmPwd"
-          name="confirmPwd"
-          type="password"
-          label="Confirm password"
-          value={formik.values.confirmPwd}
-          onChange={formik.handleChange}
-          error={formik.touched.confirmPwd && Boolean(formik.errors.confirmPwd)}
-          helperText={formik.touched.confirmPwd && formik.errors.confirmPwd}
-        />
-        <div style={{ margin: "10px 0px" }}>
-          <BlueButton type="submit" style={{ float: "right" }}>
-            Confirm
-          </BlueButton>
-        </div>
-      </CustomForm>
-      <FormControl sx={{ minWidth: "180px" }}>
-        <Select defaultValue="English" value={language} onChange={handleChange}>
-          <MenuItem value="English">English</MenuItem>
-          <MenuItem value="Chinese">Chinese</MenuItem>
-        </Select>
-      </FormControl>
+      <Box>
+        <CustomForm onSubmit={formik.handleSubmit}>
+          <img
+            src="logo.png"
+            alt="Rounx admin"
+            width="90px"
+            height="90px"
+            style={{ color: "#336def", alignSelf: "center" }}
+          />
+          <Typography
+            style={{
+              fontSize: "20px",
+              textAlign: "center",
+              marginTop: "-10px",
+              marginBottom: "20px",
+            }}
+          >
+            Reset password
+          </Typography>
+          <TextField
+            fullWidth
+            id="password"
+            name="password"
+            label="Set password"
+            type={showPassword ? "text" : "password"}
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            helperText={"At least 8 characters"}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+          <TextField
+            fullWidth
+            id="confirmPwd"
+            name="confirmPwd"
+            type="password"
+            label="Confirm password"
+            value={formik.values.confirmPwd}
+            onChange={formik.handleChange}
+            error={formik.touched.confirmPwd && Boolean(formik.errors.confirmPwd)}
+            helperText={formik.touched.confirmPwd && formik.errors.confirmPwd}
+          />
+          <div style={{ margin: "10px 0px" }}>
+            <BlueButton type="submit" style={{ float: "right" }}>
+              Confirm
+            </BlueButton>
+          </div>
+        </CustomForm>
+        <FormControl sx={{ minWidth: "180px" }}>
+          <Select defaultValue="English" value={language} onChange={handleChange}>
+            <MenuItem value="English">English</MenuItem>
+            <MenuItem value="Chinese">Chinese</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+
     </FormBox>
   );
 }
