@@ -42,16 +42,15 @@ export default function ClientPicture() {
       <Box padding='20px'>
         <Box>
           <StyledBadge
-
             overlap="circular"
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             variant="dot"
           >
-            <Avatar sx={{ width: '60px', height: '60px', zIndex: '1' }} alt="Remy Sharp" src="logo.png" />
+            <Avatar sx={{ marginTop: '-70%', width: '90px', height: '90px' }} alt="Remy Sharp" src="/avatar.png" />
           </StyledBadge>
         </Box>
         <Box>
-          <Typography>Alex Lance</Typography>
+          <Typography mt={3}>Alex Lance</Typography>
           <Typography className='typography-soft'>@alexlance</Typography>
         </Box>
       </Box>
