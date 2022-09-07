@@ -12,11 +12,13 @@ import {
   Button
 } from "@mui/material";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import axios from "axios";
 
 import ResetPasswordModal from "./ResetPasswordModal";
 import PauseUserModal from "./PauseUserModal";
 import DeleteUserModal from "./DeleteUserModal";
 import { useNavigate } from "react-router-dom";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const MuiChip = styled(Chip)(({ theme }) => ({
   "&:hover": {
@@ -52,7 +54,14 @@ export default function AdminUserTableBody(props: any) {
   const handleClose = () => {
     setMoreButton(null);
   };
-
+  const userClick = (name: string) => {
+    axios.post(`${BASE_URL}/clients/${name}`, {}, {
+      headers: {
+        "Content-Type": "application/json",
+        "Accept-Language": 'en'
+      }
+    }).then(() => navigate(`users/${name}`))
+  }
   return (
     <TableBody>
       {rows.map((row, index) => (
@@ -63,7 +72,7 @@ export default function AdminUserTableBody(props: any) {
               <Button
                 className="name-detail normal-text"
                 variant="text"
-                onClick={() => navigate(`/users/${row.name}`)}
+                onClick={() => userClick(row.name)}
               >
                 {row.name}
               </Button>

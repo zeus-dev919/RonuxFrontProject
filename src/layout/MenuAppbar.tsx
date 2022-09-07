@@ -13,6 +13,9 @@ import Menu from "@mui/material/Menu";
 import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import axios from "axios";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 
 export default function MenuAppbar() {
   const [auth, setAuth] = React.useState(true);
@@ -22,7 +25,16 @@ export default function MenuAppbar() {
   const handleMenu = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
-
+  const signOutClick = () => {
+    setAnchorEl(null);
+    axios.post(`${BASE_URL}/sign-out`, {}, {
+      headers: {
+        "Content-Type": "application/json",
+        "Accept-Language": 'en'
+      }
+    }).then(() => navigate("/sign-in"))
+      .catch((error) => console.log(error));
+  }
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -91,7 +103,7 @@ export default function MenuAppbar() {
                   <MenuItem style={{ padding: "15px" }} onClick={handleClose}>
                     Change language
                   </MenuItem>
-                  <MenuItem style={{ padding: "15px" }} onClick={handleClose}>
+                  <MenuItem style={{ padding: "15px" }} onClick={signOutClick}>
                     Sign out
                   </MenuItem>
                 </MenuList>

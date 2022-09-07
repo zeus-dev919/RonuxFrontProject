@@ -27,6 +27,7 @@ const validationSchema = yup.object({
     .min(8, "Password should be of minimum 8 characters length")
     .required("Password is required"),
 });
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export default function SignIn() {
   const [language, setLanguage] = React.useState("English");
@@ -40,7 +41,7 @@ export default function SignIn() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      axios.post(`https://admin.rounx.com/admin/v1/sign-in`, {
+      axios.post(`${BASE_URL}/sign-in`, {
         email: values.email,
         password: values.password
       }, {

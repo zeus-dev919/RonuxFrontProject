@@ -9,7 +9,10 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 
 const validationSchema = yup.object({
   code: yup.string().required("Code is required"),
@@ -18,14 +21,24 @@ const validationSchema = yup.object({
 export default function EmailVerification() {
   const [language, setLanguage] = React.useState("English");
   const navigate = useNavigate();
-
+  const location = useLocation();
   const formik = useFormik({
     initialValues: {
       code: "",
     },
     validationSchema,
     onSubmit: (values) => {
-      navigate("/reset-password");
+      console.log(location.state);
+      axios.post(`${BASE_URL}/sign-in`, {
+        code: values.code,
+        email: location.state
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept-Language": 'en'
+        }
+      }).then(() => navigate("/reset-password"))
+        .catch((error) => console.log(error));
     },
   });
 

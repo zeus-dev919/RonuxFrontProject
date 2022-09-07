@@ -16,6 +16,7 @@ import { BlueButton, CustomForm, FormBox } from "./../commonStyle/CommonStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const validationSchema = yup.object({
   password: yup
@@ -36,6 +37,7 @@ export default function ResetPassword() {
   const [showPassword, setShowPassword] = React.useState(false);
   const navigate = useNavigate();
 
+
   const formik = useFormik({
     initialValues: {
       password: "",
@@ -43,7 +45,7 @@ export default function ResetPassword() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      axios.post(`https://admin.rounx.com/admin/v1/sign-in`, {
+      axios.post(`${BASE_URL}/sign-in`, {
         email: 'admin@rounx.com',
         password: values.password
       }, {
@@ -53,7 +55,6 @@ export default function ResetPassword() {
         }
       }).then(() => navigate("/sign-in"))
         .catch((error) => console.log(error));
-      navigate("/sign-in");
     },
   });
 

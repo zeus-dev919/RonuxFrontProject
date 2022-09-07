@@ -8,8 +8,11 @@ import {
   FormControl,
   Select,
   MenuItem,
+  Box
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const validationSchema = yup.object({
   email: yup
@@ -28,7 +31,15 @@ export default function ForgotPassword() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      navigate("/verification-email");
+      axios.post(`${BASE_URL}/send-email-code`, {
+        email: values.email,
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept-Language": 'en'
+        }
+      }).then(() => navigate("/verification-email", { state: { email: values.email } }))
+        .catch((error) => console.log(error));
     },
   });
 
@@ -38,57 +49,60 @@ export default function ForgotPassword() {
 
   return (
     <FormBox>
-      <CustomForm onSubmit={formik.handleSubmit}>
-        <img
-          src="logo.png"
-          alt="Rounx admin"
-          width="90px"
-          height="90px"
-          style={{ color: "#336def", alignSelf: "center" }}
-        />
-        <Typography
-          style={{
-            fontSize: "20px",
-            textAlign: "center",
-            marginTop: "-10px",
-            marginBottom: "20px",
-          }}
-        >
-          <span>Forgot password</span>
-        </Typography>
-        <Typography
-          style={{
-            fontSize: "16px",
-            textAlign: "center",
-            marginTop: "-30px",
-            marginBottom: "20px",
-          }}
-        >
-          Please enter your email, we will send you
-          <br />a verification code
-        </Typography>
-        <TextField
-          fullWidth
-          id="email"
-          name="email"
-          label="Email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
-        />
-        <div style={{ margin: "10px 0px" }}>
-          <BlueButton type="submit" style={{ float: "right" }}>
-            Next
-          </BlueButton>
-        </div>
-      </CustomForm>
-      <FormControl sx={{ minWidth: "180px" }}>
-        <Select defaultValue="English" value={language} onChange={handleChange}>
-          <MenuItem value="English">English</MenuItem>
-          <MenuItem value="Chinese">Chinese</MenuItem>
-        </Select>
-      </FormControl>
+      <Box>
+        <CustomForm onSubmit={formik.handleSubmit}>
+          <img
+            src="logo.png"
+            alt="Rounx admin"
+            width="90px"
+            height="90px"
+            style={{ color: "#336def", alignSelf: "center" }}
+          />
+          <Typography
+            style={{
+              fontSize: "20px",
+              textAlign: "center",
+              marginTop: "-10px",
+              marginBottom: "20px",
+            }}
+          >
+            <span>Forgot password</span>
+          </Typography>
+          <Typography
+            style={{
+              fontSize: "16px",
+              textAlign: "center",
+              marginTop: "-30px",
+              marginBottom: "20px",
+            }}
+          >
+            Please enter your email, we will send you
+            <br />a verification code
+          </Typography>
+          <TextField
+            fullWidth
+            id="email"
+            name="email"
+            label="Email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+          <div style={{ margin: "10px 0px" }}>
+            <BlueButton type="submit" style={{ float: "right" }}>
+              Next
+            </BlueButton>
+          </div>
+        </CustomForm>
+        <FormControl sx={{ minWidth: "180px" }}>
+          <Select defaultValue="English" value={language} onChange={handleChange}>
+            <MenuItem value="English">English</MenuItem>
+            <MenuItem value="Chinese">Chinese</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+
     </FormBox>
   );
 }
