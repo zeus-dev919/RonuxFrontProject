@@ -33,20 +33,21 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 export default function ClientPicture() {
   return (
     <Paper style={{ marginBottom: '20px', height: '40%' }}>
+      <img
+        width='100%'
+        height='50%'
+        src="/back.png"
+        alt="userpicture"
+      />
       <Box padding='20px'>
-        <Box height='50%'>
-          <img
-            src="./logo.png"
-            alt="userpicture"
-          />
-        </Box>
         <Box>
           <StyledBadge
+
             overlap="circular"
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             variant="dot"
           >
-            <Avatar sx={{ width: '60px', height: '60px' }} alt="Remy Sharp" src="logo.png" />
+            <Avatar sx={{ width: '60px', height: '60px', zIndex: '1' }} alt="Remy Sharp" src="logo.png" />
           </StyledBadge>
         </Box>
         <Box>

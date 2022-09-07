@@ -32,7 +32,7 @@ export default function MenuAppbar() {
       <AppBar position="static">
         <Toolbar>
           <img
-            src="PNG_logo horizontal-05.png"
+            src="/PNG_logo horizontal-05.png"
             alt="Rounx admin"
             width="130px"
             height="70px"

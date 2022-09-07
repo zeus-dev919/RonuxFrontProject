@@ -41,11 +41,16 @@ export default function SignIn() {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       axios.post(`https://admin.rounx.com:10000/admin/v1/sign-in`, {
-        email: formik.values.email,
-        password: formik.values.password,
+        email: 'admin@rounx.com',
+        password: 'abcd@1234'
       }, {
-        headers: { "Accept": "application/json, text/plain, /", "Content-Type": "multipart/form-data", "language": 'en' }
-      }).then((res) => console.log('ok'));
+        headers: {
+          'Accept': 'application/json',
+          "Content-Type": "application/json",
+          "Accept-Language": 'en'
+        }
+      }).then((response) => console.log(response))
+        .catch((error) => console.log(error));
       //navigate("/");
     },
   });

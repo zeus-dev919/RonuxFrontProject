@@ -13,7 +13,7 @@ export default function ClientProfile() {
       </ListItem>
       <Divider />
       <Box padding="5% 15% 10%" display="flex">
-        <Box padding="10px" width='40%'>
+        <Box paddingRight="10px" width='40%'>
           <ClientPicture />
           <ClientBasicInfo />
           <ClientUserInfo />

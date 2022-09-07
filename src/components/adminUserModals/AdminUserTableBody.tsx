@@ -39,7 +39,7 @@ export type adminUserDataType = {
 }
 
 export default function AdminUserTableBody(props: any) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const rows: Array<adminUserDataType> = props.rows;
   const [moreButton, setMoreButton] = React.useState<HTMLDivElement | null>(null);
   const open = Boolean(moreButton);
