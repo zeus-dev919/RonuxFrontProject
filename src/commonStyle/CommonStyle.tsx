@@ -16,12 +16,13 @@ import {
 } from "@mui/material";
 
 export const DecideButton = styled(Button)(() => ({
-  color: "#336def",
-  textTransform: "none",
+  textTransform: 'none',
+  marginTop: '-10px',
+  borderRadius: '30px',
+  marginBottom: '5px',
+  padding: '8px 15px',
   "&:hover": {
-    borderWidth: "5px 10px",
-    borderRadius: "20px",
-    background: "#ccccff",
+    backgroundColor: 'lightblue'
   },
 }));
 

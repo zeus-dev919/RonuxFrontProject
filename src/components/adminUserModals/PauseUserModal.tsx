@@ -1,18 +1,16 @@
 import * as React from "react";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
-import { TextField } from "@mui/material";
-import { DecideButton } from "../../commonStyle/CommonStyle";
+import {
+	Dialog,
+	Button,
+	DialogActions,
+	DialogContent,
+	DialogContentText,
+	DialogTitle,
+	TextField
+} from "@mui/material";
 
 export default function PauseUserModal(props: any) {
 	const [open, setOpen] = React.useState(false);
-	const theme = useTheme();
-	const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -27,32 +25,31 @@ export default function PauseUserModal(props: any) {
 			<div onClick={handleClickOpen}>{"Pause user"}
 			</div>
 			<Dialog
-				fullScreen={fullScreen}
+				fullWidth
+				maxWidth='xs'
 				open={open}
 				onClose={handleClose}
-				aria-labelledby="responsive-dialog-title"
 			>
 				<DialogTitle
-					id="responsive-dialog-title"
 					className='dialog-title'
 				>
 					Pause user {props.name}
 				</DialogTitle>
 				<DialogContent style={{ marginTop: "20px" }}>
-					<DialogContentText style={{ marginTop: "20px" }} >
+					<DialogContentText  >
 						The systems retains this user's data, but as long as the user is still paused, cannot sign in to the account.
 					</DialogContentText>
 					<DialogContentText style={{ marginTop: "20px" }} >
-						<TextField label="Pause Reason" defaultValue="Text description" sx={{ m: 1, width: '60ch' }}></TextField>
+						<TextField fullWidth label="Pause Reason" defaultValue="Text description"></TextField>
 					</DialogContentText>
 				</DialogContent>
 				<DialogActions>
-					<DecideButton onClick={handleClose} autoFocus>
+					<Button className='normal-text round-button' autoFocus onClick={handleClose}>
 						Cancel
-					</DecideButton>
-					<DecideButton onClick={handleClose} autoFocus>
+					</Button>
+					<Button className='normal-text round-button' autoFocus onClick={handleClose}>
 						Pause
-					</DecideButton>
+					</Button>
 				</DialogActions>
 			</Dialog>
 		</div>

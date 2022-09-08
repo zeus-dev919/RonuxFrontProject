@@ -9,10 +9,10 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Box
+  Box,
+  Button
 } from "@mui/material";
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { DecideButton } from "../../commonStyle/CommonStyle";
 
 const MuiChip = styled(Chip)(({ theme }) => ({
   "&:hover": {
@@ -63,12 +63,12 @@ export default function ResetPasswordModal(props: any) {
             <br />
           </DialogContent>
           <DialogActions>
-            <DecideButton autoFocus onClick={handleClose}>
+            <Button className='normal-text round-button' autoFocus onClick={handleClose}>
               Cancel
-            </DecideButton>
-            <DecideButton onClick={resetClick} autoFocus>
+            </Button>
+            <Button className='normal-text round-button' onClick={resetClick} autoFocus>
               Reset
-            </DecideButton>
+            </Button>
           </DialogActions>
         </Dialog>
       ) : (
@@ -93,12 +93,12 @@ export default function ResetPasswordModal(props: any) {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <DecideButton autoFocus onClick={handleClose}>
+            <Button className='normal-text round-button' autoFocus onClick={handleClose}>
               Copy password
-            </DecideButton>
-            <DecideButton onClick={handleClose} autoFocus>
+            </Button>
+            <Button className='normal-text round-button' onClick={handleClose} autoFocus>
               Close
-            </DecideButton>
+            </Button>
           </DialogActions>
         </Dialog>
       )}
