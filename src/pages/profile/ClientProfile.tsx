@@ -1,4 +1,4 @@
-import { Divider, ListItem, Typography, Box } from '@mui/material';
+import { Divider, ListItem, Typography, Box, Grid } from '@mui/material';
 import React from 'react';
 import ClientBasicInfo from '../../components/profile/client/ClientBasicInfo';
 import ClientPicture from '../../components/profile/client/ClientPicture';
@@ -12,7 +12,17 @@ export default function ClientProfile() {
         <Typography ml={1}> Client profile </Typography>
       </ListItem>
       <Divider />
-      <Box padding="5% 15% 10%" display="flex">
+      <Grid padding="5% 15% 10%" container>
+        <Grid paddingRight="10px" item xs={12} md={12} lg={5}>
+          <ClientPicture />
+          <ClientBasicInfo />
+          <ClientUserInfo />
+        </Grid>
+        <Grid item xs={12} md={12} lg={7}>
+          <JobFeedback />
+        </Grid>
+      </Grid>
+      {/* <Box padding="5% 15% 10%" display="flex">
         <Box paddingRight="10px" width='40%'>
           <ClientPicture />
           <ClientBasicInfo />
@@ -22,7 +32,7 @@ export default function ClientProfile() {
           <JobFeedback />
         </Box>
 
-      </Box>
+      </Box> */}
     </>
   )
 }

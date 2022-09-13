@@ -53,9 +53,9 @@ export default function JobFeedback() {
             <BorderLinearProgress variant="determinate" value={10} />
           </Box>
           <Box>
-            <Box>4.3</Box>
-            <Rating value={3} readOnly />
-            <Box>58 reviews</Box>
+            <Typography fontSize='48px' color='#757575'>4.3</Typography>
+            <Rating size='small' value={3} readOnly />
+            <Typography>58 reviews</Typography>
           </Box>
         </Box>
         <Divider />
