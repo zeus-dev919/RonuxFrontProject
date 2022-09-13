@@ -68,7 +68,7 @@ export default function SignIn() {
       <Box width='500px'>
         <CustomForm onSubmit={formik.handleSubmit}>
           <img
-            src="logo.png"
+            src="icon.png"
             alt="Rounx admin"
             width="90px"
             height="90px"
@@ -134,12 +134,7 @@ export default function SignIn() {
             </BlueButton>
           </Box>
         </CustomForm>
-        <FormControl sx={{ minWidth: "180px" }}>
-          <Select defaultValue="English" value={language} onChange={handleChange}>
-            <MenuItem value="English">English</MenuItem>
-            <MenuItem value="Chinese">Chinese</MenuItem>
-          </Select>
-        </FormControl>
+
       </Box>
     </FormBox>
   );
