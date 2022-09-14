@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -102,7 +102,6 @@ const data = [
 
 export default function RonuxAdmin() {
   const navigate = useNavigate();
-
   return (
     <>
       <div style={{ margin: "50px 30px" }}>

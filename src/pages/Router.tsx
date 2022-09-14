@@ -32,13 +32,16 @@ import JobDetails from "./Review/JobDetails";
 import ReportedJob from "./report/ReportedJob";
 import MoneyManage from "./MoneyManage";
 import DataAnalysis from "./DataAnalysis";
+import AuthGuard from "../components/AuthGuard";
 
 function MainLayout() {
   return (
     <>
+      <AuthGuard />
       <MenuAppbar />
       <Outlet />
     </>
+
   );
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import {
@@ -16,6 +17,8 @@ import axios from "axios";
 import { BlueButton, CustomForm, FormBox } from "./../commonStyle/CommonStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { IS_LOGIN } from "../actions/actionType";
+
 
 const validationSchema = yup.object({
   email: yup
@@ -33,7 +36,7 @@ export default function SignIn() {
   const [language, setLanguage] = React.useState("English");
   const [showPassword, setShowPassword] = React.useState(false);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -49,7 +52,11 @@ export default function SignIn() {
           "Content-Type": "application/json",
           "Accept-Language": 'en'
         }
-      }).then(() => navigate("/"))
+      }).then((res) => {
+        localStorage.setItem('token', res.data);
+        dispatch({ type: 'IS_LOGIN' });
+        navigate("/")
+      })
         .catch((error) => console.log(error));
       //navigate("/");
     },

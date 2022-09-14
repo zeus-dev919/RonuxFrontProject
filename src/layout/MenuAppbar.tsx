@@ -42,7 +42,7 @@ export default function MenuAppbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{ backgroundColor: "#336def" }}>
           <img
             src="/PNG_logo horizontal-05.png"
             alt="Rounx admin"
