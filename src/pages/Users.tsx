@@ -13,30 +13,34 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Pagination from "../components/Pagination";
-import PopOverModal from "../components/users/PopOverModal";
 import { CustomTableHeadWithTwoActions, TableBox } from "../commonStyle/CommonStyle";
 import UsersTableBody from "../components/users/UsersTableBody";
-//Reac API data here
-const data = [{
-  name: 'Perry Lance',
-  email: 'cryptotopstar@gmail.com',
-  telephone: '102-123-0123'
-},
-]
+import axios from "axios";
+import AddUserModal from "../components/users/AddUserModal";
 
+const BASE_URL = process.env.REACT_APP_API;
 
 export default function Users() {
   const tableHeader = ["Name", "Email", "Telephone",];
-  const rows = data;
-  const [anchorEl, setAnchorEl] = React.useState<HTMLDivElement | null>(null);
-  const open = Boolean(anchorEl);
+  const [userlist, setUserlist] = React.useState([]);
+  const [addUserOpen, setAddUserOpen] = React.useState(false);
+  const getUserlist = async () => {
+    const res = await axios.get(`${BASE_URL}/users/userlist`);
+    console.log(res);
+    setUserlist(res.data);
+  }
+  React.useEffect(() => {
+    getUserlist();
+  }, []);
+  //const rows = data;
+
   //handle event
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    setAnchorEl(event.currentTarget);
+    setAddUserOpen(true);
   };
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAddUserOpen(false);
+  }
 
   return (
     <>
@@ -57,13 +61,13 @@ export default function Users() {
               Add user
             </Box>
           </Box>
-          <PopOverModal open={open} anchorEl={anchorEl} handleClose={handleClose} />
+          <AddUserModal open={addUserOpen} handleClose={handleClose} getUserlist={getUserlist} />
           <TableContainer component={Paper}>
             <Table>
               <CustomTableHeadWithTwoActions name={tableHeader} />
-              <UsersTableBody rows={rows} />
+              <UsersTableBody rows={userlist} getUserlist={getUserlist} />
               <TableFooter>
-                <Pagination rows={rows} />
+                <Pagination rows={userlist} />
               </TableFooter>
             </Table>
           </TableContainer>

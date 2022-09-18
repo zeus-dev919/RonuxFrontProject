@@ -43,21 +43,13 @@ export default function MenuAppbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <img
-            src="/icon.png"
-            alt="Rounx admin"
-
-            width="130px"
-            height="70px"
-            style={{ cursor: "pointer", zIndex: 'auto' }}
-            onClick={() => navigate("/")}
-          />
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, marginLeft: "-5px", marginTop: "2px" }}
+            sx={{ flexGrow: 1, marginLeft: "-5px", marginTop: "2px", cursor: 'pointer' }}
+            onClick={() => navigate('/')}
           >
-            Admin
+            Salon Admin
           </Typography>
           {auth && (
             <div>
@@ -101,9 +93,6 @@ export default function MenuAppbar() {
                     usertcqq@gmail.com{" "}
                   </ListItemText>
                   <Divider />
-                  <MenuItem style={{ padding: "15px" }} onClick={handleClose}>
-                    Change language
-                  </MenuItem>
                   <MenuItem style={{ padding: "15px" }} onClick={signOutClick}>
                     Sign out
                   </MenuItem>

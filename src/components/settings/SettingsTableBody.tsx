@@ -13,21 +13,21 @@ import { useNavigate } from "react-router-dom";
 import EditUserModal from "./EditUserModal";
 import DeleteUserModal from "./DeleteUserModal";
 
-
 export type reviewReportDataType = {
   username: string,
-  telephone: string,
-  email: string
+  time: string,
+  reservationname: string,
+  price: string,
 }
 
-export default function UsersTableBody(props: any) {
+export default function SettingsTableBody(props: any) {
   let navigate = useNavigate();
   const rows: Array<reviewReportDataType> = props.rows;
   return (
     <TableBody>
       {rows.map((row, index) => (
         <TableRow key={index} hover={true} className="row-hover">
-          <TableCell style={{ width: '30%' }} component="th" scope="row">
+          <TableCell style={{ width: '20%' }} component="th" scope="row">
             <Stack direction="row" spacing={0}>
               <Avatar />
               <Button
@@ -38,8 +38,9 @@ export default function UsersTableBody(props: any) {
               </Button>
             </Stack>
           </TableCell>
-          <TableCell style={{ width: '30%' }}>{row.email}</TableCell>
-          <TableCell style={{ width: '30%' }}>{row.telephone}</TableCell>
+          <TableCell style={{ width: '20%' }}>{row.time}</TableCell>
+          <TableCell style={{ width: '20%' }}>{row.reservationname}</TableCell>
+          <TableCell style={{ width: '20%' }}>{row.price}</TableCell>
           <TableCell align="right">
             <Box className="hidden">
               <EditUserModal getUserlist={props.getUserlist} row={row} />

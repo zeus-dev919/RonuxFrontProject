@@ -14,39 +14,38 @@ import axios from 'axios';
 
 
 const validationSchema = yup.object({
-  email: yup
+  description: yup
     .string()
-    .email("Enter a valid email")
     .required("Email is required"),
-  username: yup
+  name: yup
     .string()
     .required("Username is required"),
-  telephone: yup
+  price: yup
     .number()
-    .required("Telephone is required"),
+    .required("Price is required"),
 });
 
 
-export default function EditUserModal(props: any) {
+export default function EditServiceModal(props: any) {
   const [open, setOpen] = React.useState(false);
   const BASE_URL = process.env.REACT_APP_API;
   console.log(props.row.id);
   const formik = useFormik({
     initialValues: {
-      email: props.row.email,
-      username: props.row.username,
-      telephone: props.row.telephone
+      description: props.row.description,
+      name: props.row.name,
+      price: props.row.price
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      axios.post(`${BASE_URL}/users/update/${props.row.id}`, {
-        email: values.email,
-        username: values.username,
-        telephone: values.telephone,
+      axios.post(`${BASE_URL}/menu/update/${props.row.id}`, {
+        description: values.description,
+        name: values.name,
+        price: values.price,
       },).then(result => {
         console.log(result);
         handleClose();
-        props.getUserlist();
+        props.getServicelist();
       }).catch((error) => console.log(error));
 
     },
@@ -58,15 +57,10 @@ export default function EditUserModal(props: any) {
   const handleClose = () => {
     setOpen(false);
   };
-  const unblockClick = () => {
-    handleClose();
-
-  }
-
   return (
     <Box>
       <Box onClick={handleClickOpen}>
-        <MuiChip label="Edit user" />
+        <MuiChip label="Edit service" />
       </Box>
       <Dialog
         open={open}
@@ -74,34 +68,35 @@ export default function EditUserModal(props: any) {
         maxWidth='xs'
         style={{ width: '100%' }}
       >
-        <DialogTitle className='dialog-title'>Edit user</DialogTitle>
+        <DialogTitle className='dialog-title'>Edit service</DialogTitle>
         <CustomForm onSubmit={formik.handleSubmit}>
           <TextField
-            id="username"
-            name="username"
-            label="Username"
-            value={formik.values.username}
+            id="name"
+            name="name"
+            label="Name"
+            value={formik.values.name}
             onChange={formik.handleChange}
-            error={formik.touched.username && Boolean(formik.errors.username)}
-          // helperText={formik.touched.username && formik.errors.username}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+          //helperText={formik.touched.name && formik.errors.name}
           />
           <TextField
-            name="telephone"
-            label="Telephone"
-            value={formik.values.telephone}
+            id="price"
+            name="price"
+            label="Price"
+            value={formik.values.price}
             onChange={formik.handleChange}
-            error={formik.touched.telephone && Boolean(formik.errors.telephone)}
+            error={formik.touched.price && Boolean(formik.errors.price)}
           // helperText={formik.touched.telephone && formik.errors.telephone}
           />
           <Divider />
           <TextField
             fullWidth
-            id="email"
-            name="email"
-            label="Email"
-            value={formik.values.email}
+            id="description"
+            name="description"
+            label="Description"
+            value={formik.values.description}
             onChange={formik.handleChange}
-            error={formik.touched.email && Boolean(formik.errors.email)}
+            error={formik.touched.description && Boolean(formik.errors.description)}
           // helperText={formik.touched.email && formik.errors.email}
           />
           <Box style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>

@@ -7,7 +7,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { TextField, Box } from "@mui/material";
 import { DecideButton, MuiChip } from "../../commonStyle/CommonStyle";
 import axios from 'axios';
-export default function DeleteUserModal(props: any) {
+export default function DeleteServiceModal(props: any) {
     const [open, setOpen] = React.useState(false);
     const BASE_URL = process.env.REACT_APP_API;
     //hancle show or hidden modal
@@ -17,16 +17,16 @@ export default function DeleteUserModal(props: any) {
     const handleClose = () => {
         setOpen(false);
     };
-    const deleteUser = () => {
-        axios.get(`${BASE_URL}/users/delete/${props.row.id}`).then(result => {
+    const deleteService = () => {
+        axios.get(`${BASE_URL}/menu/delete/${props.row.id}`).then(result => {
             handleClose();
-            props.getUserlist();
+            props.getServicelist();
         }).catch((error) => console.log(error));
     }
     return (
         <div>
             <Box onClick={handleClickOpen}>
-                <MuiChip label="Delete user" />
+                <MuiChip label="Delete service" />
             </Box>
             <Dialog
                 open={open}
@@ -35,18 +35,18 @@ export default function DeleteUserModal(props: any) {
                 <DialogTitle
                     className='dialog-title'
                 >
-                    Delete user {props.row.username}
+                    Delete service {props.row.name}
                 </DialogTitle>
                 <DialogContent style={{ marginTop: "20px" }}>
                     <DialogContentText style={{ marginTop: "20px" }} >
-                        Sure you want to delete this user?
+                        Sure you want to delete this service?
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <DecideButton onClick={handleClose} autoFocus>
                         Cancel
                     </DecideButton>
-                    <DecideButton onClick={deleteUser} autoFocus>
+                    <DecideButton onClick={deleteService} autoFocus>
                         Delete
                     </DecideButton>
                 </DialogActions>

@@ -7,11 +7,13 @@ import SignIn from "./SignIn";
 import EmailVerification from "./EmailVerification";
 import ResetPassword from "./ResetPassword";
 import Users from "./Users";
-
+import Service from "./Service";
+import AuthGuard from "../AuthGuard";
 
 function MainLayout() {
   return (
     <>
+      <AuthGuard />
       <MenuAppbar />
       <Outlet />
     </>
@@ -50,7 +52,7 @@ export default function Router() {
         },
         {
           path: "/services",
-          element: <Users />
+          element: <Service />
         },
         {
           path: "/settings",

@@ -50,7 +50,7 @@ export default function Home() {
       <div style={{ margin: "10% 30px", }}>
         <Grid container justifyContent="center" spacing={4}>
           {data.map((item) => (
-            <Grid item xs="auto" lg="auto" wrap="nowrap" key={item.title}>
+            <Grid item xs="auto" sm="auto" md="auto" lg="auto" wrap="nowrap" key={item.title}>
               <Item onClick={() => navigate(item.url)}>
                 <img
                   height='300px'

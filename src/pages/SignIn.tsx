@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import {
@@ -16,6 +17,9 @@ import axios from "axios";
 import { BlueButton, CustomForm, FormBox } from "./../commonStyle/CommonStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { IS_LOGIN } from "../actions/actionType";
+import { useSnackbar } from "notistack";
+
 
 const validationSchema = yup.object({
   email: yup
@@ -27,13 +31,13 @@ const validationSchema = yup.object({
     .min(8, "Password should be of minimum 8 characters length")
     .required("Password is required"),
 });
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = process.env.REACT_APP_API;
 
 export default function SignIn() {
-  const [language, setLanguage] = React.useState("English");
   const [showPassword, setShowPassword] = React.useState(false);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -41,23 +45,18 @@ export default function SignIn() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      axios.post(`${BASE_URL}/sign-in`, {
+      axios.post(`${BASE_URL}/users/adminsignin`, {
         email: values.email,
         password: values.password
-      }, {
-        headers: {
-          "Content-Type": "application/json",
-          "Accept-Language": 'en'
-        }
-      }).then(() => navigate("/"))
+      }).then((res) => {
+        localStorage.setItem('token', res.data[0]);
+        dispatch({ type: 'IS_LOGIN' });
+        navigate("/");
+        enqueueSnackbar('ログインしました', { variant: 'success' });
+      })
         .catch((error) => console.log(error));
-      //navigate("/");
     },
   });
-
-  const handleChange = (event: any) => {
-    setLanguage(event.target.value as string);
-  };
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -66,7 +65,10 @@ export default function SignIn() {
   return (
     <FormBox>
       <Box width='500px'>
-        <CustomForm onSubmit={formik.handleSubmit}>
+        <CustomForm sx={{
+          border: "1px solid lightgray",
+          borderRadius: "4px",
+        }} onSubmit={formik.handleSubmit}>
           <img
             src="icon.png"
             alt="Rounx admin"
@@ -83,7 +85,7 @@ export default function SignIn() {
             }}
           >
             <span>Sign in </span>
-            <span style={{ fontWeight: "bold" }}>Rounx Admin</span>
+            <span style={{ fontWeight: "bold" }}>Salon Admin</span>
           </Typography>
           <TextField
             fullWidth
@@ -134,7 +136,6 @@ export default function SignIn() {
             </BlueButton>
           </Box>
         </CustomForm>
-
       </Box>
     </FormBox>
   );
