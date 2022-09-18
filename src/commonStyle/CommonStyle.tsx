@@ -124,8 +124,8 @@ export const CustomTableHeadWithTwoActions = (props: any) => {
       <TableRow
         className="user-admin-console-tablerow">
         {
-          header.map((item: string) => {
-            return <TableCell align="left">{item}</TableCell>
+          header.map((item: string, index: number) => {
+            return <TableCell key={index} align="left">{item}</TableCell>
           })
         }
         <TableCell></TableCell>
@@ -141,8 +141,8 @@ export const CustomTableHeadWithOneActions = (props: any) => {
       <TableRow
         className="user-admin-console-tablerow">
         {
-          header.map((item: string) => {
-            return <TableCell align="left">{item}</TableCell>
+          header.map((item: string, index: number) => {
+            return <TableCell key={index} align="left">{item}</TableCell>
           })
         }
         <TableCell></TableCell>
@@ -157,8 +157,8 @@ export const CustomTableHeadWithNoActions = (props: any) => {
       <TableRow
         className="user-admin-console-tablerow">
         {
-          header.map((item: string) => {
-            return <TableCell align="left">{item}</TableCell>
+          header.map((item: string, index: number) => {
+            return <TableCell key={index} align="left">{item}</TableCell>
           })
         }
       </TableRow>

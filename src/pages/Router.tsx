@@ -9,6 +9,7 @@ import ResetPassword from "./ResetPassword";
 import Users from "./Users";
 import Service from "./Service";
 import AuthGuard from "../AuthGuard";
+import Setting from "./Setting";
 
 function MainLayout() {
   return (
@@ -56,8 +57,8 @@ export default function Router() {
           element: <Service />
         },
         {
-          path: "/settings",
-          element: <Users />
+          path: "/bookings",
+          element: <Setting />
         },
       ],
     },

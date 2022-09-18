@@ -26,7 +26,6 @@ export default function Users() {
   const [addUserOpen, setAddUserOpen] = React.useState(false);
   const getUserlist = async () => {
     const res = await axios.get(`${BASE_URL}/users/userlist`);
-    console.log(res);
     setUserlist(res.data);
   }
   React.useEffect(() => {

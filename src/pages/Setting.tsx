@@ -22,7 +22,7 @@ import SettingsTableBody from "../components/settings/SettingsTableBody";
 const BASE_URL = process.env.REACT_APP_API;
 
 export default function Setting() {
-    const tableHeader = ["Username", "Time", "Reservation name", "Price"];
+    const tableHeader = ["Username", "Booking Time", "Service name", "Price($)"];
     const [settinglist, setSettinglist] = React.useState([]);
     // const [addUserOpen, setAddUserOpen] = React.useState(false);
     const getSettinglist = async () => {
@@ -32,6 +32,7 @@ export default function Setting() {
     React.useEffect(() => {
         getSettinglist();
     }, []);
+    console.log(settinglist);
     //const rows = data;
 
     //handle event
@@ -45,22 +46,22 @@ export default function Setting() {
     return (
         <>
             <ListItem>
-                <Typography ml={1}> Services </Typography>
+                <Typography ml={1}> Booking </Typography>
             </ListItem>
             <Divider />
             <TableBox>
                 <Box className="user-admin-console-container">
                     <Toolbar className="user-admin-console-toolbar">
                         <Typography className="user-admin-console-typography">
-                            Currently showing all services
+                            Currently showing all bookings
                         </Typography>
                     </Toolbar>
-                    {/* <Box className="admin-user-console-choose">
-                        <Box onClick={handleClick} className="user-admin-console-add-filters">
+                    <Box className="admin-user-console-choose">
+                        <Box className="user-admin-console-add-filters">
                             <AddIcon />
-                            Add service
+                            Add booking
                         </Box>
-                    </Box> */}
+                    </Box>
                     {/* <AddServiceModal open={addUserOpen} handleClose={handleClose} getServicelist={getServicelist} /> */}
                     <TableContainer component={Paper}>
                         <Table>

@@ -15,8 +15,8 @@ import DeleteUserModal from "./DeleteUserModal";
 
 export type reviewReportDataType = {
   username: string,
-  time: string,
-  reservationname: string,
+  reservation_date: string,
+  servicename: string,
   price: string,
 }
 
@@ -28,18 +28,10 @@ export default function SettingsTableBody(props: any) {
       {rows.map((row, index) => (
         <TableRow key={index} hover={true} className="row-hover">
           <TableCell style={{ width: '20%' }} component="th" scope="row">
-            <Stack direction="row" spacing={0}>
-              <Avatar />
-              <Button
-                className="name-detail normal-text"
-                variant="text"
-              >
-                {row.username}
-              </Button>
-            </Stack>
+            {row.username}
           </TableCell>
-          <TableCell style={{ width: '20%' }}>{row.time}</TableCell>
-          <TableCell style={{ width: '20%' }}>{row.reservationname}</TableCell>
+          <TableCell style={{ width: '20%' }}>{row.reservation_date}</TableCell>
+          <TableCell style={{ width: '20%' }}>{row.servicename}</TableCell>
           <TableCell style={{ width: '20%' }}>{row.price}</TableCell>
           <TableCell align="right">
             <Box className="hidden">

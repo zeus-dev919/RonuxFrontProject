@@ -49,8 +49,8 @@ export default function SignIn() {
         email: values.email,
         password: values.password
       }).then((res) => {
-        localStorage.setItem('token', res.data[0]);
-        dispatch({ type: 'IS_LOGIN' });
+        localStorage.setItem('user', JSON.stringify(res.data[0]));
+        dispatch({ type: IS_LOGIN, payload: res.data[0] });
         navigate("/");
         enqueueSnackbar('ログインしました', { variant: 'success' });
       })

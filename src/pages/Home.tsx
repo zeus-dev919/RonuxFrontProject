@@ -3,6 +3,7 @@ import { Avatar, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import { useNavigate } from "react-router-dom";
+import { FormBox } from "../commonStyle/CommonStyle";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -22,24 +23,25 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const data = [
   {
-    title: "Service",
-    details: "Adding the service",
-    url: "/services",
-    src: "/service.jpg"
-  },
-  {
-    title: "Setting",
-    details: "Edit setting",
-    url: "/settings",
-    src: "/settings.jpg"
-
-  },
-  {
     title: "User",
     details: "Manage and search users",
     url: "/users",
     src: "/user.jpg"
   },
+  {
+    title: "Service",
+    details: "Add and Delete the service",
+    url: "/services",
+    src: "/service.jpg"
+  },
+  {
+    title: "Booking detail",
+    details: "Show all the booking details",
+    url: "/bookings",
+    src: "/settings.jpg"
+
+  },
+
 ];
 
 export default function Home() {
@@ -47,10 +49,10 @@ export default function Home() {
 
   return (
     <>
-      <div style={{ margin: "10% 30px", }}>
+      <FormBox>
         <Grid container justifyContent="center" spacing={4}>
           {data.map((item) => (
-            <Grid item xs="auto" sm="auto" md="auto" lg="auto" wrap="nowrap" key={item.title}>
+            <Grid item xs="auto" sm="auto" md="auto" lg="auto" key={item.title}>
               <Item onClick={() => navigate(item.url)}>
                 <img
                   height='300px'
@@ -70,7 +72,7 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
-      </div>
+      </FormBox>
     </>
   );
 }
