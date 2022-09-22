@@ -8,7 +8,6 @@ import {
   Avatar,
   Button
 } from "@mui/material";
-import { MuiChip } from "../../commonStyle/CommonStyle";
 import { useNavigate } from "react-router-dom";
 import EditServiceModal from "./EditServiceModal";
 import DeleteServiceModal from "./DeleteServiceModal";
@@ -19,6 +18,7 @@ export type serviceType = {
   time: string,
   price: string,
   description: string,
+  time_slot: string,
 }
 
 export default function ServicesTableBody(props: any) {
@@ -28,13 +28,13 @@ export default function ServicesTableBody(props: any) {
     <TableBody>
       {rows.map((row, index) => (
         <TableRow key={index} hover={true} className="row-hover">
-          <TableCell style={{ width: '20%' }} component="th" scope="row">
+          <TableCell style={{ width: '16%' }} component="th" scope="row">
             {row.name}
           </TableCell>
-          <TableCell style={{ width: '20%' }}>{row.time}</TableCell>
-          <TableCell style={{ width: '20%' }}>{row.price}</TableCell>
-          <TableCell style={{ width: '20%' }}>{row.description}</TableCell>
-
+          <TableCell style={{ width: '16%' }}>{row.time}</TableCell>
+          <TableCell style={{ width: '16%' }}>{row.price}</TableCell>
+          <TableCell style={{ width: '16%' }}>{row.description}</TableCell>
+          <TableCell style={{ width: '16%' }}>{row.time_slot ? parseInt(row.time_slot) * 30 : 0} 分</TableCell>
           <TableCell align="right">
             <Box className="hidden">
               <EditServiceModal getServicelist={props.getServicelist} row={row} />

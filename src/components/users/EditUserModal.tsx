@@ -11,6 +11,7 @@ import {
 import { BlueButton, CustomForm, MuiChip } from "../../commonStyle/CommonStyle";
 import { useFormik } from "formik";
 import axios from 'axios';
+import { useSnackbar } from "notistack";
 
 
 const validationSchema = yup.object({
@@ -22,19 +23,24 @@ const validationSchema = yup.object({
     .string()
     .required("Username is required"),
   telephone: yup
-    .number()
+    .string().matches(/^[0-9]{10,11}$/i, 'Phone number is not valid')
     .required("Telephone is required"),
+  point: yup
+    .number()
 });
 
 
 export default function EditUserModal(props: any) {
   const [open, setOpen] = React.useState(false);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
   const BASE_URL = process.env.REACT_APP_API;
   const formik = useFormik({
     initialValues: {
-      email: props.row.email,
-      username: props.row.username,
-      telephone: props.row.telephone
+      email: `${props.row.email}`,
+      username: `${props.row.username}`,
+      telephone: `${props.row.telephone}`,
+      point: `${props.row.point}`
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -42,12 +48,12 @@ export default function EditUserModal(props: any) {
         email: values.email,
         username: values.username,
         telephone: values.telephone,
+        point: values.point,
       },).then(result => {
-        console.log(result);
+        enqueueSnackbar('ログインしました', { variant: 'success' });
         handleClose();
         props.getUserlist();
       }).catch((error) => console.log(error));
-
     },
   });
   //handle functions
@@ -57,11 +63,6 @@ export default function EditUserModal(props: any) {
   const handleClose = () => {
     setOpen(false);
   };
-  const unblockClick = () => {
-    handleClose();
-
-  }
-
   return (
     <Box>
       <Box onClick={handleClickOpen}>
@@ -82,7 +83,7 @@ export default function EditUserModal(props: any) {
             value={formik.values.username}
             onChange={formik.handleChange}
             error={formik.touched.username && Boolean(formik.errors.username)}
-          // helperText={formik.touched.username && formik.errors.username}
+            helperText={formik.touched.username && formik.errors.username}
           />
           <TextField
             name="telephone"
@@ -90,7 +91,7 @@ export default function EditUserModal(props: any) {
             value={formik.values.telephone}
             onChange={formik.handleChange}
             error={formik.touched.telephone && Boolean(formik.errors.telephone)}
-          // helperText={formik.touched.telephone && formik.errors.telephone}
+            helperText={formik.touched.telephone && formik.errors.telephone}
           />
           <Divider />
           <TextField
@@ -101,7 +102,17 @@ export default function EditUserModal(props: any) {
             value={formik.values.email}
             onChange={formik.handleChange}
             error={formik.touched.email && Boolean(formik.errors.email)}
-          // helperText={formik.touched.email && formik.errors.email}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+          <TextField
+            fullWidth
+            id="point"
+            name="point"
+            label="Point"
+            value={formik.values.point}
+            onChange={formik.handleChange}
+            error={formik.touched.point && Boolean(formik.errors.point)}
+            helperText={formik.touched.point && formik.errors.point}
           />
           <Box style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Button

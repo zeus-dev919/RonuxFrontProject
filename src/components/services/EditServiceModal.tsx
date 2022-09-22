@@ -6,12 +6,12 @@ import {
   Box,
   Divider,
   Dialog,
-  DialogTitle
+  DialogTitle,
+  InputAdornment
 } from "@mui/material";
 import { BlueButton, CustomForm, MuiChip } from "../../commonStyle/CommonStyle";
 import { useFormik } from "formik";
 import axios from 'axios';
-
 
 const validationSchema = yup.object({
   description: yup
@@ -23,6 +23,9 @@ const validationSchema = yup.object({
   price: yup
     .number()
     .required("Price is required"),
+  timeSlot: yup
+    .number().integer().positive()
+    .required("TimeSlot is required"),
 });
 
 
@@ -32,9 +35,10 @@ export default function EditServiceModal(props: any) {
   console.log(props.row.id);
   const formik = useFormik({
     initialValues: {
-      description: props.row.description,
-      name: props.row.name,
-      price: props.row.price
+      description: `${props.row.description}`,
+      name: `${props.row.name}`,
+      price: `${props.row.price}`,
+      timeSlot: `${props.row.time_slot}`
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -42,6 +46,7 @@ export default function EditServiceModal(props: any) {
         description: values.description,
         name: values.name,
         price: values.price,
+        time_slot: values.timeSlot,
       },).then(result => {
         console.log(result);
         handleClose();
@@ -77,16 +82,19 @@ export default function EditServiceModal(props: any) {
             value={formik.values.name}
             onChange={formik.handleChange}
             error={formik.touched.name && Boolean(formik.errors.name)}
-          //helperText={formik.touched.name && formik.errors.name}
+            helperText={formik.touched.name && formik.errors.name}
           />
           <TextField
-            id="price"
             name="price"
             label="Price"
+            type='number'
             value={formik.values.price}
             onChange={formik.handleChange}
             error={formik.touched.price && Boolean(formik.errors.price)}
-          // helperText={formik.touched.telephone && formik.errors.telephone}
+            helperText={formik.touched.price && formik.errors.price}
+            InputProps={{
+              startAdornment: <InputAdornment position="start">$</InputAdornment>
+            }}
           />
           <Divider />
           <TextField
@@ -97,7 +105,16 @@ export default function EditServiceModal(props: any) {
             value={formik.values.description}
             onChange={formik.handleChange}
             error={formik.touched.description && Boolean(formik.errors.description)}
-          // helperText={formik.touched.email && formik.errors.email}
+            helperText={formik.touched.description && formik.errors.description}
+          />
+          <TextField
+            type="number"
+            name="timeSlot"
+            label="Time Slot"
+            value={formik.values.timeSlot}
+            onChange={formik.handleChange}
+            error={formik.touched.timeSlot && Boolean(formik.errors.timeSlot)}
+            helperText={formik.touched.timeSlot && formik.errors.timeSlot}
           />
           <Box style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Button

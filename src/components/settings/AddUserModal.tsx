@@ -29,7 +29,7 @@ const validationSchema = yup.object({
         .string()
         .required("Username is required"),
     telephone: yup
-        .number()
+        .string().matches(/^[0-9]{10,11}$/i, 'Phone number is not valid')
         .required("Telephone is required"),
     confirmPwd: yup
         .string()

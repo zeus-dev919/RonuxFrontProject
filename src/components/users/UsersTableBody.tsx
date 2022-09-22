@@ -17,7 +17,8 @@ import DeleteUserModal from "./DeleteUserModal";
 export type reviewReportDataType = {
   username: string,
   telephone: string,
-  email: string
+  email: string,
+  point: number,
 }
 
 export default function UsersTableBody(props: any) {
@@ -27,7 +28,7 @@ export default function UsersTableBody(props: any) {
     <TableBody>
       {rows.map((row, index) => (
         <TableRow key={index} hover={true} className="row-hover">
-          <TableCell style={{ width: '30%' }} component="th" scope="row">
+          <TableCell style={{ width: '22%' }} component="th" scope="row">
             <Stack direction="row" spacing={0}>
               <Avatar />
               <Button
@@ -38,8 +39,10 @@ export default function UsersTableBody(props: any) {
               </Button>
             </Stack>
           </TableCell>
-          <TableCell style={{ width: '30%' }}>{row.email}</TableCell>
-          <TableCell style={{ width: '30%' }}>{row.telephone}</TableCell>
+          <TableCell style={{ width: '22%' }}>{row.email}</TableCell>
+          <TableCell style={{ width: '23%' }}>{row.telephone}</TableCell>
+          <TableCell style={{ width: '23%' }}>{row.point}</TableCell>
+
           <TableCell align="right">
             <Box className="hidden">
               <EditUserModal getUserlist={props.getUserlist} row={row} />

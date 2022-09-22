@@ -34,6 +34,7 @@ const validationSchema = yup.object({
 const BASE_URL = process.env.REACT_APP_API;
 
 export default function SignIn() {
+
   const [showPassword, setShowPassword] = React.useState(false);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const navigate = useNavigate();
@@ -49,12 +50,14 @@ export default function SignIn() {
         email: values.email,
         password: values.password
       }).then((res) => {
-        localStorage.setItem('user', JSON.stringify(res.data[0]));
-        dispatch({ type: IS_LOGIN, payload: res.data[0] });
+        localStorage.setItem('user', JSON.stringify(res.data.data[0]));
+        dispatch({ type: IS_LOGIN, payload: res.data.data[0] });
         navigate("/");
         enqueueSnackbar('ログインしました', { variant: 'success' });
       })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          enqueueSnackbar(error.response.data.msg, { variant: 'error' });
+        });
     },
   });
 

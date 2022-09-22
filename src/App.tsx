@@ -16,9 +16,7 @@ function App() {
           <Router />
         </BrowserRouter>
       </Provider>
-
     </SnackbarProvider>
-
   );
 }
 

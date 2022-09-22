@@ -48,7 +48,7 @@ export default function MenuAppbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar sx={{ backgroundColor: "#336def" }}>
 
           <Typography

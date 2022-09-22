@@ -1,9 +1,10 @@
 import React from "react";
-import { Avatar, Grid, Typography } from "@mui/material";
+import { Avatar, Grid, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import { useNavigate } from "react-router-dom";
 import { FormBox } from "../commonStyle/CommonStyle";
+import { Box } from "@mui/system";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -11,7 +12,7 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
 
   color: theme.palette.text.secondary,
-  position: "relative",
+  // position: "relative",
 
   cursor: "pointer",
   ":hover": {
@@ -46,10 +47,15 @@ const data = [
 
 export default function Home() {
   const navigate = useNavigate();
-
   return (
     <>
-      <FormBox>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: '15vw',
+          alignItems: 'center'
+        }}>
         <Grid container justifyContent="center" spacing={4}>
           {data.map((item) => (
             <Grid item xs="auto" sm="auto" md="auto" lg="auto" key={item.title}>
@@ -72,7 +78,7 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
-      </FormBox>
+      </Box>
     </>
   );
 }

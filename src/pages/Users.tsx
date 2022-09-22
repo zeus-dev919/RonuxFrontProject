@@ -21,7 +21,7 @@ import AddUserModal from "../components/users/AddUserModal";
 const BASE_URL = process.env.REACT_APP_API;
 
 export default function Users() {
-  const tableHeader = ["Name", "Email", "Telephone",];
+  const tableHeader = ["Name", "Email", "Telephone", "Point"];
   const [userlist, setUserlist] = React.useState([]);
   const [addUserOpen, setAddUserOpen] = React.useState(false);
   const getUserlist = async () => {

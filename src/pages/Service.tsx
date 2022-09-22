@@ -21,7 +21,7 @@ import AddServiceModal from "../components/services/AddServiceModal";
 const BASE_URL = process.env.REACT_APP_API;
 
 export default function Service() {
-    const tableHeader = ["Name", "Time", "Price", "description"];
+    const tableHeader = ["Name", "Created Time", "Price", "description", "Time Slot"];
     const [servicelist, setServicelist] = React.useState([]);
     const [addUserOpen, setAddUserOpen] = React.useState(false);
     const getServicelist = async () => {

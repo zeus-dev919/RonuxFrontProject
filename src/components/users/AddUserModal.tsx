@@ -15,6 +15,7 @@ import { BlueButton, CustomForm, FlexBox, FormBox } from "../../commonStyle/Comm
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { useSnackbar } from "notistack";
 
 const validationSchema = yup.object({
     email: yup
@@ -29,7 +30,7 @@ const validationSchema = yup.object({
         .string()
         .required("Username is required"),
     telephone: yup
-        .number()
+        .string().matches(/^[0-9]{10,11}$/i, 'Phone number is not valid')
         .required("Telephone is required"),
     confirmPwd: yup
         .string()
@@ -44,6 +45,7 @@ export default function AddUserModal(props: any) {
     const [language, setLanguage] = React.useState("English");
     const [showPassword, setShowPassword] = React.useState(false);
     const BASE_URL = process.env.REACT_APP_API;
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
     const formik = useFormik({
         initialValues: {
@@ -62,9 +64,12 @@ export default function AddUserModal(props: any) {
                 telephone: values.telephone,
             }).then(result => {
                 console.log(result);
+                enqueueSnackbar('ログインしました', { variant: 'success' });
                 props.handleClose();
                 props.getUserlist();
-            }).catch((error) => console.log(error));
+            }).catch((error) => {
+                enqueueSnackbar(error.response.data, { variant: 'error' });
+            });
 
         },
     });
