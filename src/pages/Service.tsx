@@ -25,7 +25,7 @@ export default function Service() {
     const [servicelist, setServicelist] = React.useState([]);
     const [addUserOpen, setAddUserOpen] = React.useState(false);
     const getServicelist = async () => {
-        const res = await axios.get(`${BASE_URL}/menu/menulist`);
+        const res = await axios.get(`${BASE_URL}/menu/list`);
         console.log('ok');
         setServicelist(res.data);
     }

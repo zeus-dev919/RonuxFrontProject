@@ -12,6 +12,8 @@ import {
 import { BlueButton, CustomForm, MuiChip } from "../../commonStyle/CommonStyle";
 import { useFormik } from "formik";
 import axios from 'axios';
+import { useSnackbar } from "notistack";
+
 
 const validationSchema = yup.object({
   description: yup
@@ -30,9 +32,9 @@ const validationSchema = yup.object({
 
 
 export default function EditServiceModal(props: any) {
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const [open, setOpen] = React.useState(false);
   const BASE_URL = process.env.REACT_APP_API;
-  console.log(props.row.id);
   const formik = useFormik({
     initialValues: {
       description: `${props.row.description}`,
@@ -51,7 +53,10 @@ export default function EditServiceModal(props: any) {
         console.log(result);
         handleClose();
         props.getServicelist();
-      }).catch((error) => console.log(error));
+        enqueueSnackbar('Successfully updated', { variant: 'success' });
+      }).catch((error) => {
+        enqueueSnackbar('error occured', { variant: 'error' })
+      });
 
     },
   });

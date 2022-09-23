@@ -57,7 +57,7 @@ export default function AddUserModal(props: any) {
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            axios.post(`${BASE_URL}/users/signup`, {
+            axios.post(`${BASE_URL}/users/add`, {
                 email: values.email,
                 password: values.password,
                 username: values.username,

@@ -7,7 +7,11 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { TextField, Box } from "@mui/material";
 import { DecideButton, MuiChip } from "../../commonStyle/CommonStyle";
 import axios from 'axios';
+import { useSnackbar } from "notistack";
+
 export default function DeleteServiceModal(props: any) {
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
     const [open, setOpen] = React.useState(false);
     const BASE_URL = process.env.REACT_APP_API;
     //hancle show or hidden modal
@@ -18,7 +22,8 @@ export default function DeleteServiceModal(props: any) {
         setOpen(false);
     };
     const deleteService = () => {
-        axios.get(`${BASE_URL}/menu/delete/${props.row.id}`).then(result => {
+        axios.get(`${BASE_URL}/menu/delete/${props.row.id}`).then(() => {
+            enqueueSnackbar('Successfully deleted', { variant: 'success' });
             handleClose();
             props.getServicelist();
         }).catch((error) => console.log(error));

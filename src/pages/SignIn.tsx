@@ -20,7 +20,6 @@ import { useNavigate } from "react-router-dom";
 import { IS_LOGIN } from "../actions/actionType";
 import { useSnackbar } from "notistack";
 
-
 const validationSchema = yup.object({
   email: yup
     .string()
@@ -46,7 +45,7 @@ export default function SignIn() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      axios.post(`${BASE_URL}/users/adminsignin`, {
+      axios.post(`${BASE_URL}/users/sign-in`, {
         email: values.email,
         password: values.password
       }).then((res) => {
